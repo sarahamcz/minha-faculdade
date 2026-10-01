@@ -1,1241 +1,2135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#7c5a8c">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#7c5a8c">
+
 <title>📚 Minha Faculdade — UNIVESP</title>
 
 <style>
-:root{
-    --bg:#f7f3f8;
-    --card:#ffffff;
-    --text:#29242d;
-    --muted:#817985;
-    --primary:#7c5a8c;
-    --primary-light:#eee5f2;
-    --secondary:#d9c5df;
-    --green:#75a889;
-    --yellow:#e5b95c;
-    --red:#d97979;
-    --shadow:0 8px 25px rgba(55,35,65,.08);
-    --radius:20px;
+
+:root {
+    --roxo: #7c5a8c;
+    --roxo-escuro: #60436f;
+    --roxo-claro: #eee5f2;
+    --fundo: #f7f3f8;
+    --branco: #ffffff;
+    --texto: #3f3545;
+    --texto-claro: #74697b;
+    --verde: #69a66d;
+    --amarelo: #e7b84b;
+    --borda: #e5dce8;
+    --sombra: 0 4px 15px rgba(70, 45, 80, 0.08);
 }
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.5;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
 }
 
-button{
-    font-family:inherit;
+button {
+    font-family: inherit;
 }
 
-.container{
-    width:min(1200px,92%);
-    margin:auto;
+.container {
+    width: min(1100px, 94%);
+    margin: auto;
 }
-
-/* HEADER */
-
-header{
-    padding:30px 0 20px;
-}
-
-.header-box{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.logo h1{
-    font-size:32px;
-    margin-bottom:5px;
-}
-
-.logo p{
-    color:var(--muted);
-}
-
-.today{
-    background:var(--card);
-    padding:15px 20px;
-    border-radius:16px;
-    box-shadow:var(--shadow);
-    text-align:right;
-}
-
-/* HERO */
-
-.hero{
-    background:linear-gradient(135deg,#7c5a8c,#a982b2);
-    color:white;
-    padding:28px;
-    border-radius:var(--radius);
-    margin-bottom:25px;
-    box-shadow:var(--shadow);
-}
-
-.hero-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.hero h2{
-    font-size:25px;
-    margin-bottom:8px;
-}
-
-.hero p{
-    opacity:.9;
-}
-
-.exam-box{
-    background:rgba(255,255,255,.18);
-    padding:18px 22px;
-    border-radius:16px;
-    min-width:200px;
-}
-
-.exam-box strong{
-    display:block;
-    font-size:24px;
-    margin-top:5px;
-}
-
-/* ALERT */
-
-.alert{
-    background:#fff8df;
-    border-left:5px solid var(--yellow);
-    padding:18px;
-    border-radius:14px;
-    margin-bottom:25px;
-}
-
-/* SECTION */
-
-.section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:30px 0 15px;
-}
-
-.section-title h2{
-    font-size:22px;
-}
-
-/* WEEK CARDS */
-
-.weeks{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:12px;
-}
-
-.week-card{
-    background:var(--card);
-    border-radius:18px;
-    padding:16px 12px;
-    cursor:pointer;
-    box-shadow:var(--shadow);
-    transition:.2s;
-    border:2px solid transparent;
-}
-
-.week-card:hover{
-    transform:translateY(-3px);
-}
-
-.week-card.active{
-    border-color:var(--primary);
-    background:var(--primary-light);
-}
-
-.week-number{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.week-date{
-    font-size:12px;
-    color:var(--muted);
-    margin:4px 0 12px;
-}
-
-.progress-bar{
-    height:7px;
-    background:#eee8ef;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.progress-fill{
-    height:100%;
-    background:var(--primary);
-    width:0%;
-    transition:.3s;
-}
-
-.progress-text{
-    font-size:12px;
-    color:var(--muted);
-    margin-top:6px;
-}
-
-/* CONTENT */
-
-.content-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:20px;
-    margin-top:20px;
-}
-
-.panel{
-    background:var(--card);
-    padding:25px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-}
-
-.panel h3{
-    margin-bottom:18px;
-}
-
-/* SUBJECTS */
-
-.subject{
-    border:1px solid #eee8ef;
-    border-radius:16px;
-    padding:18px;
-    margin-bottom:15px;
-}
-
-.subject-header{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    margin-bottom:12px;
-}
-
-.subject-name{
-    font-weight:bold;
-}
-
-.subject-code{
-    font-size:12px;
-    color:var(--muted);
-    margin-top:3px;
-}
-
-.topic{
-    background:#faf8fb;
-    padding:12px;
-    border-radius:12px;
-    margin-bottom:14px;
-    font-size:14px;
-}
-
-.check{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    margin:8px 0;
-    font-size:14px;
-    cursor:pointer;
-}
-
-.check input{
-    width:18px;
-    height:18px;
-    accent-color:var(--primary);
-}
-
-/* EXAMS */
-
-.exam-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 0;
-    border-bottom:1px solid #eee8ef;
-}
-
-.exam-item:last-child{
-    border-bottom:none;
-}
-
-.exam-name{
-    font-weight:bold;
-}
-
-.exam-date{
-    color:var(--muted);
-    font-size:13px;
-}
-
-.badge{
-    background:var(--primary-light);
-    color:var(--primary);
-    padding:6px 10px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-/* TIMELINE */
-
-.timeline{
-    margin-top:20px;
-}
-
-.timeline-item{
-    display:flex;
-    gap:15px;
-    padding:15px 0;
-    border-left:3px solid var(--secondary);
-    padding-left:18px;
-    position:relative;
-}
-
-.timeline-dot{
-    width:12px;
-    height:12px;
-    background:var(--primary);
-    border-radius:50%;
-    position:absolute;
-    left:-7px;
-    top:20px;
-}
-
-.timeline-date{
-    font-size:13px;
-    color:var(--muted);
-}
-
-/* TIMER */
-
-.timer{
-    text-align:center;
-}
-
-.timer-display{
-    font-size:48px;
-    font-weight:bold;
-    margin:15px 0;
-    color:var(--primary);
-}
-
-.timer-buttons{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-}
-
-.timer-buttons button{
-    border:none;
-    padding:10px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    background:var(--primary-light);
-    color:var(--primary);
-    font-weight:bold;
-}
-
-.timer-buttons button:hover{
-    background:var(--secondary);
-}
-
-/* RESET */
-
-.reset-btn{
-    border:none;
-    background:#f4e8e8;
-    color:#a55454;
-    padding:10px 14px;
-    border-radius:10px;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:35px 0;
-    color:var(--muted);
-    font-size:13px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-    .weeks{
-        grid-template-columns:repeat(4,1fr);
-    }
-
-    .content-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .header-box{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .today{
-        width:100%;
-        text-align:left;
-    }
-
-    .hero-content{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .exam-box{
-        width:100%;
-    }
-
-    .weeks{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .panel{
-        padding:18px;
-    }
-
-    .logo h1{
-        font-size:27px;
-    }
-
-    .timer-display{
-        font-size:40px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<header>
-    <div class="header-box">
-
-        <div class="logo">
-            <h1>📚 Minha Faculdade</h1>
-            <p>Meu painel de estudos — UNIVESP</p>
-        </div>
-
-        <div class="today">
-            <strong>Hoje</strong>
-            <div id="today"></div>
-        </div>
-
-    </div>
-</header>
-
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div>
-            <h2 id="currentWeekTitle">Minha semana de estudos</h2>
-            <p id="currentWeekDescription">
-                Escolha uma semana abaixo para começar.
-            </p>
-        </div>
-
-        <div class="exam-box">
-            <small>Próxima avaliação</small>
-            <strong id="nextExam">—</strong>
-        </div>
-
-    </div>
-
-</section>
-
-
-<div class="alert">
-    ⚠️ <strong>Atenção:</strong>
-    S6 e S7 têm fechamento/avaliação no mesmo dia:
-    <strong>02/11/2026</strong>.
-</div>
-
-
-<section>
-
-    <div class="section-title">
-        <h2>🗓️ Minhas semanas</h2>
-    </div>
-
-    <div class="weeks" id="weeks"></div>
-
-</section>
-
-
-<div class="content-grid">
-
-    <main>
-
-        <div class="panel">
-
-            <h3 id="detailTitle">
-                📖 Conteúdo da semana
-            </h3>
-
-            <div id="subjects"></div>
-
-        </div>
-
-    </main>
-
-
-    <aside>
-
-        <div class="panel">
-
-            <h3>⏰ Próximas avaliações</h3>
-
-            <div id="exams"></div>
-
-        </div>
-
-
-        <div class="panel" style="margin-top:20px;">
-
-            <h3>⏱️ Meu tempo de estudo</h3>
-
-            <div class="timer">
-
-                <div class="timer-display" id="timer">
-                    60:00
-                </div>
-
-                <div class="timer-buttons">
-
-                    <button onclick="startTimer()">
-                        ▶ Iniciar
-                    </button>
-
-                    <button onclick="pauseTimer()">
-                        ⏸ Pausar
-                    </button>
-
-                    <button onclick="resetTimer()">
-                        ↺ Reiniciar
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </aside>
-
-</div>
-
-
-<section class="panel timeline">
-
-    <div class="section-title">
-        <h2>📅 Linha do tempo</h2>
-    </div>
-
-    <div id="timeline"></div>
-
-</section>
-
-
-<footer>
-    Feito para organizar meus estudos 💜📚
-</footer>
-
-</div>
-
-
-<script>
 
 /* =========================
-   DADOS DAS DISCIPLINAS
+   CABEÇALHO
 ========================= */
 
-const weeks = [
-
-{
-    id:"S1",
-    date:"28/09/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Compreensão do contexto da Educação de Jovens e Adultos"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"Abrangência e características da literatura infantojuvenil"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"Vivência x Experiência: As práticas corporais como potenciais de afetação na formação de professores"
-        }
-    ]
-},
-
-{
-    id:"S2",
-    date:"05/10/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Alfabetização e letramento para jovens e adultos"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"As origens e a formação da literatura infantojuvenil brasileira"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"A construção cultural do corpo"
-        }
-    ]
-},
-
-{
-    id:"S3",
-    date:"12/10/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Fundamentos teóricos e didáticos para a Educação de Jovens e Adultos"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"Prosa, teatro e quadrinho infantojuvenil brasileiros"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"Corporalidade: a constituição do humano"
-        }
-    ]
-},
-
-{
-    id:"S4",
-    date:"19/10/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Propostas curriculares"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"Poesia e canção infantojuvenil brasileiras"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"Concepções e constituição da Educação Física como área de conhecimento."
-        }
-    ]
-},
-
-{
-    id:"S5",
-    date:"26/10/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Inovação e novas práticas pedagógicas"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"Uma extensão da literatura infantojuvenil: a contação de histórias"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"Arte e Educação Física como Área da Linguagem"
-        }
-    ]
-},
-
-{
-    id:"S6",
-    date:"02/11/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Avaliação e acompanhamento dos alunos adultos"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"O ensino de literatura infantojuvenil"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"Estética como elemento constitutivo das práticas corporais artísticas e esportivas"
-        }
-    ]
-},
-
-{
-    id:"S7",
-    date:"02/11/2026",
-    topics:[
-        {
-            name:"Educação de Jovens e Adultos",
-            code:"SEJ001 — Turma 002",
-            topic:"Reflexão e formação contínua"
-        },
-        {
-            name:"Literatura infanto juvenil",
-            code:"LET510 — Turma 002",
-            topic:"Tendências contemporâneas da literatura infantojuvenil no Brasil"
-        },
-        {
-            name:"Educação, corpo e arte",
-            code:"EDU510 — Turma 002",
-            topic:"Poéticas Infantis"
-        }
-    ]
+header {
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+    color: white;
+    padding: 24px 0;
+    box-shadow: var(--sombra);
 }
 
-];
-
-
-/* =========================
-   STORAGE
-========================= */
-
-function saveData(key,value){
-
-    localStorage.setItem(
-        "univesp_" + key,
-        JSON.stringify(value)
-    );
-
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-function getData(key){
-
-    const value = localStorage.getItem(
-        "univesp_" + key
-    );
-
-    return value ? JSON.parse(value) : null;
-
+.logo {
+    font-size: 25px;
+    font-weight: bold;
 }
 
-
-/* =========================
-   DATA ATUAL
-========================= */
-
-document.getElementById("today").innerText =
-    new Date().toLocaleDateString(
-        "pt-BR",
-        {
-            weekday:"long",
-            day:"2-digit",
-            month:"long",
-            year:"numeric"
-        }
-    );
-
-
-/* =========================
-   SEMANA ATUAL
-========================= */
-
-let selectedWeek = "S1";
-
-
-/* =========================
-   CALCULAR PROGRESSO
-========================= */
-
-function getWeekProgress(weekId){
-
-    let completed = 0;
-
-    let total = 9;
-
-    for(let i=0;i<3;i++){
-
-        for(let j=0;j<3;j++){
-
-            const key =
-                `${weekId}_${i}_${j}`;
-
-            if(
-                localStorage.getItem(
-                    "univesp_check_" + key
-                ) === "true"
-            ){
-
-                completed++;
-
-            }
-
-        }
-
-    }
-
-    return Math.round(
-        (completed / total) * 100
-    );
-
+.date {
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-
 /* =========================
-   RENDER WEEKS
+   HERO / HOJE
 ========================= */
 
-function renderWeeks(){
-
-    const container =
-        document.getElementById("weeks");
-
-    container.innerHTML="";
-
-    weeks.forEach(week=>{
-
-        const progress =
-            getWeekProgress(week.id);
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "week-card" +
-            (week.id === selectedWeek
-                ? " active"
-                : "");
-
-        card.innerHTML = `
-
-            <div class="week-number">
-                ${week.id}
-            </div>
-
-            <div class="week-date">
-                ${week.date}
-            </div>
-
-            <div class="progress-bar">
-
-                <div
-                    class="progress-fill"
-                    style="width:${progress}%">
-                </div>
-
-            </div>
-
-            <div class="progress-text">
-                ${progress}% concluído
-            </div>
-
-        `;
-
-        card.onclick = () => {
-
-            selectedWeek =
-                week.id;
-
-            renderWeeks();
-            renderDetails();
-
-        };
-
-        container.appendChild(card);
-
-    });
-
+.hero {
+    margin-top: 25px;
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--sombra);
 }
 
+.hero h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.hero p {
+    margin: 5px 0;
+    color: var(--texto-claro);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.hero-box {
+    background: var(--roxo-claro);
+    border-radius: 15px;
+    padding: 18px;
+}
+
+.hero-box strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.hero-box span {
+    color: var(--texto-claro);
+    font-size: 14px;
+}
 
 /* =========================
-   DETALHES DA SEMANA
+   CARDS DE PROGRESSO
 ========================= */
 
-function renderDetails(){
-
-    const week =
-        weeks.find(
-            w => w.id === selectedWeek
-        );
-
-    document.getElementById(
-        "detailTitle"
-    ).innerText =
-        `📖 ${week.id} — Conteúdos da semana`;
-
-    document.getElementById(
-        "currentWeekTitle"
-    ).innerText =
-        `${week.id} — Semana de estudos`;
-
-    document.getElementById(
-        "currentWeekDescription"
-    ).innerText =
-        `Fechamento / avaliação: ${week.date}`;
-
-    document.getElementById(
-        "nextExam"
-    ).innerText =
-        week.date;
-
-
-    const container =
-        document.getElementById("subjects");
-
-    container.innerHTML="";
-
-
-    week.topics.forEach(
-        (subject,index)=>{
-
-            const div =
-                document.createElement("div");
-
-            div.className =
-                "subject";
-
-            div.innerHTML = `
-
-                <div class="subject-header">
-
-                    <div>
-
-                        <div class="subject-name">
-                            ${subject.name}
-                        </div>
-
-                        <div class="subject-code">
-                            ${subject.code}
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="topic">
-
-                    📌 <strong>Conteúdo:</strong><br>
-
-                    ${subject.topic}
-
-                </div>
-
-
-                <label class="check">
-
-                    <input
-                        type="checkbox"
-                        data-key="${selectedWeek}_${index}_0">
-
-                    📺 Ver aula / material
-
-                </label>
-
-
-                <label class="check">
-
-                    <input
-                        type="checkbox"
-                        data-key="${selectedWeek}_${index}_1">
-
-                    📝 Fazer anotações / resumo
-
-                </label>
-
-
-                <label class="check">
-
-                    <input
-                        type="checkbox"
-                        data-key="${selectedWeek}_${index}_2">
-
-                    🔄 Revisar antes da avaliação
-
-                </label>
-
-            `;
-
-
-            const checkboxes =
-                div.querySelectorAll(
-                    "input[type=checkbox]"
-                );
-
-
-            checkboxes.forEach(
-                checkbox=>{
-
-                    const key =
-                        checkbox.dataset.key;
-
-                    checkbox.checked =
-                        localStorage.getItem(
-                            "univesp_check_" + key
-                        ) === "true";
-
-
-                    checkbox.addEventListener(
-                        "change",
-                        ()=>{
-
-                            localStorage.setItem(
-                                "univesp_check_" + key,
-                                checkbox.checked
-                            );
-
-                            renderWeeks();
-
-                        }
-                    );
-
-                }
-            );
-
-
-            container.appendChild(div);
-
-        }
-    );
-
+.section-title {
+    margin: 32px 0 15px;
+    font-size: 22px;
 }
 
+.progress-general {
+    background: var(--branco);
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.general-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--roxo);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 11px;
+    background: #eee8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--roxo), #a982b7);
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.subject-card {
+    background: var(--branco);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.subject-card h3 {
+    margin-top: 0;
+    font-size: 17px;
+}
+
+.subject-card p {
+    color: var(--texto-claro);
+    font-size: 13px;
+    min-height: 32px;
+}
+
+.subject-percent {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--roxo);
+}
 
 /* =========================
-   PRÓXIMAS AVALIAÇÕES
+   SEQUÊNCIA
 ========================= */
 
-function renderExams(){
-
-    const container =
-        document.getElementById("exams");
-
-    container.innerHTML="";
-
-    weeks.forEach(week=>{
-
-        const div =
-            document.createElement("div");
-
-        div.className =
-            "exam-item";
-
-        div.innerHTML = `
-
-            <div>
-
-                <div class="exam-name">
-                    ${week.id}
-                </div>
-
-                <div class="exam-date">
-                    ${week.date}
-                </div>
-
-            </div>
-
-            <span class="badge">
-                Avaliação
-            </span>
-
-        `;
-
-        container.appendChild(div);
-
-    });
-
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
+.stat-card {
+    background: var(--branco);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.stat-icon {
+    font-size: 30px;
+}
+
+.stat-value {
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.stat-label {
+    color: var(--texto-claro);
+    font-size: 13px;
+}
 
 /* =========================
-   TIMELINE
+   ALERTA
 ========================= */
 
-function renderTimeline(){
-
-    const container =
-        document.getElementById("timeline");
-
-    container.innerHTML="";
-
-    weeks.forEach(week=>{
-
-        const div =
-            document.createElement("div");
-
-        div.className =
-            "timeline-item";
-
-        div.innerHTML = `
-
-            <div class="timeline-dot"></div>
-
-            <div>
-
-                <strong>
-                    ${week.id}
-                </strong>
-
-                <div class="timeline-date">
-                    ${week.date}
-                </div>
-
-                <div style="margin-top:5px;">
-                    Estudar os conteúdos da semana,
-                    fazer anotações e revisar antes da avaliação.
-                </div>
-
-            </div>
-
-        `;
-
-        container.appendChild(div);
-
-    });
-
+.alert {
+    margin-top: 25px;
+    padding: 18px;
+    background: #fff7dc;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 12px;
+    color: #66501b;
 }
 
+/* =========================
+   SEMANAS
+========================= */
+
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.week-card {
+    background: var(--branco);
+    border: 2px solid transparent;
+    padding: 18px;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: 0.2s;
+}
+
+.week-card:hover {
+    transform: translateY(-2px);
+}
+
+.week-card.selected {
+    border-color: var(--roxo);
+}
+
+.week-card.completed {
+    border-color: var(--verde);
+}
+
+.week-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.week-date {
+    color: var(--texto-claro);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.week-percent {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.mini-bar {
+    width: 100%;
+    height: 7px;
+    background: #eee8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 7px;
+}
+
+.mini-fill {
+    height: 100%;
+    background: var(--roxo);
+}
+
+/* =========================
+   DETALHES
+========================= */
+
+.details {
+    margin-top: 25px;
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.details-header h2 {
+    margin: 0;
+}
+
+.complete-btn {
+    border: none;
+    background: var(--verde);
+    color: white;
+    padding: 11px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.complete-btn:hover {
+    opacity: 0.9;
+}
+
+.subject-detail {
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+}
+
+.subject-detail h3 {
+    margin-top: 0;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 12px 0;
+    color: var(--texto-claro);
+}
+
+.checkbox-row input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--roxo);
+}
+
+/* =========================
+   AVALIAÇÕES
+========================= */
+
+.exam-list {
+    display: grid;
+    gap: 12px;
+}
+
+.exam {
+    background: var(--branco);
+    padding: 17px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.exam strong {
+    display: block;
+}
+
+.exam span {
+    color: var(--texto-claro);
+    font-size: 13px;
+}
+
+.exam-date {
+    color: var(--roxo);
+    font-weight: bold;
+}
 
 /* =========================
    TIMER
 ========================= */
 
+.timer {
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 55px;
+    font-weight: bold;
+    color: var(--roxo);
+    margin: 15px 0;
+}
+
+.timer button {
+    border: none;
+    padding: 11px 17px;
+    margin: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--roxo);
+    color: white;
+}
+
+.timer button:hover {
+    background: var(--roxo-escuro);
+}
+
+/* =========================
+   LINHA DO TEMPO
+========================= */
+
+.timeline {
+    background: var(--branco);
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.timeline-item {
+    border-left: 3px solid var(--roxo);
+    padding: 5px 0 18px 18px;
+    margin-left: 8px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item strong {
+    display: block;
+}
+
+.timeline-item span {
+    font-size: 13px;
+    color: var(--texto-claro);
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    text-align: center;
+    padding: 35px 10px;
+    color: var(--texto-claro);
+    font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .week-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details {
+        padding: 18px;
+    }
+
+    .timer-display {
+        font-size: 45px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-content">
+
+<div class="logo">
+📚 Minha Faculdade
+</div>
+
+<div class="date" id="todayDate"></div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+<!-- =========================
+     HOJE
+========================= -->
+
+<section class="hero">
+
+<h1 id="greeting">Boa noite, Sarah! 💜</h1>
+
+<p>
+Vamos cuidar da faculdade sem transformar isso numa segunda jornada de trabalho. 😌📚
+</p>
+
+<div class="hero-grid">
+
+<div class="hero-box">
+
+<strong id="currentWeekHero">
+📖 Semana atual
+</strong>
+
+<span id="currentWeekDescription">
+Carregando...
+</span>
+
+</div>
+
+<div class="hero-box">
+
+<strong>📅 Próxima avaliação</strong>
+
+<span id="nextExamHero">
+Carregando...
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROGRESSO GERAL
+========================= -->
+
+<h2 class="section-title">
+📊 Meu progresso
+</h2>
+
+<section class="progress-general">
+
+<div>
+<span>Progresso geral das disciplinas</span>
+
+<div class="general-number" id="generalPercent">
+0%
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+id="generalProgress"
+style="width: 0%">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="subject-grid" id="subjectProgress">
+
+</div>
+
+
+<!-- =========================
+     ESTATÍSTICAS
+========================= -->
+
+<h2 class="section-title">
+🔥 Minha rotina
+</h2>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<div class="stat-icon">🔥</div>
+
+<div class="stat-value" id="streakValue">
+0
+</div>
+
+<div class="stat-label">
+dias seguidos estudando
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">📚</div>
+
+<div class="stat-value" id="completedWeeks">
+0/7
+</div>
+
+<div class="stat-label">
+semanas concluídas
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ALERTA
+========================= -->
+
+<div class="alert">
+
+<strong>⚠️ Atenção:</strong>
+
+As avaliações S6 e S7 acontecem no mesmo dia:
+
+<strong>02/11/2026.</strong>
+
+Não deixa para estudar as duas na véspera, hein? 👀
+
+</div>
+
+
+<!-- =========================
+     SEMANAS
+========================= -->
+
+<h2 class="section-title">
+🗓️ Semanas de estudo
+</h2>
+
+<div class="week-grid" id="weeksContainer">
+
+</div>
+
+
+<!-- =========================
+     DETALHES
+========================= -->
+
+<section class="details">
+
+<div class="details-header">
+
+<h2 id="detailsTitle">
+📖 Semana
+</h2>
+
+<button
+class="complete-btn"
+id="completeWeekBtn"
+onclick="toggleWeekComplete()">
+
+✅ Marcar semana como concluída
+
+</button>
+
+</div>
+
+<div id="detailsContainer">
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AVALIAÇÕES
+========================= -->
+
+<h2 class="section-title">
+📝 Avaliações
+</h2>
+
+<div class="exam-list" id="examContainer">
+
+</div>
+
+
+<!-- =========================
+     TIMER
+========================= -->
+
+<h2 class="section-title">
+⏱️ Foco nos estudos
+</h2>
+
+<section class="timer">
+
+<p>
+Um tempinho de foco. Depois você respira. 💜
+</p>
+
+<div class="timer-display" id="timerDisplay">
+60:00
+</div>
+
+<button onclick="startTimer()">
+▶ Começar
+</button>
+
+<button onclick="pauseTimer()">
+⏸ Pausar
+</button>
+
+<button onclick="resetTimer()">
+🔄 Reiniciar
+</button>
+
+</section>
+
+
+<!-- =========================
+     LINHA DO TEMPO
+========================= -->
+
+<h2 class="section-title">
+📅 Linha do tempo
+</h2>
+
+<section class="timeline" id="timelineContainer">
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+📚 Minha Faculdade — UNIVESP<br>
+Feito com carinho, café e um pouquinho de desespero acadêmico. ☕😂💜
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   DADOS DAS DISCIPLINAS
+========================================================= */
+
+const subjects = [
+
+{
+id: "eja",
+name: "Educação de Jovens e Adultos",
+short: "EJA",
+code: "SEJ001",
+topics: [
+"Compreensão do contexto da Educação de Jovens e Adultos",
+"Alfabetização e letramento para jovens e adultos",
+"Fundamentos teóricos e didáticos para a Educação de Jovens e Adultos",
+"Propostas curriculares",
+"Inovação e novas práticas pedagógicas",
+"Avaliação e acompanhamento dos alunos adultos",
+"Reflexão e formação contínua"
+]
+},
+
+{
+id: "literatura",
+name: "Literatura infantojuvenil",
+short: "Literatura",
+code: "LET510",
+topics: [
+"Abrangência e características da literatura infantojuvenil",
+"As origens e a formação da literatura infantojuvenil brasileira",
+"Prosa, teatro e quadrinho infantojuvenil brasileiros",
+"Poesia e canção infantojuvenil brasileiras",
+"Uma extensão da literatura infantojuvenil: a contação de histórias",
+"O ensino de literatura infantojuvenil",
+"Tendências contemporâneas da literatura infantojuvenil no Brasil"
+]
+},
+
+{
+id: "corpo",
+name: "Educação, corpo e arte",
+short: "Corpo e Arte",
+code: "EDU510",
+topics: [
+"Vivência x Experiência: As práticas corporais como potenciais de afetação na formação de professores",
+"A construção cultural do corpo",
+"Corporalidade: a constituição do humano",
+"Concepções e constituição da Educação Física como área de conhecimento",
+"Arte e Educação Física como Área da Linguagem",
+"Estética como elemento constitutivo das práticas corporais artísticas e esportivas",
+"Poéticas Infantis"
+]
+}
+
+];
+
+
+/* =========================================================
+   SEMANAS
+========================================================= */
+
+const weeks = [
+
+{
+id: "S1",
+date: "28/09/2026"
+},
+
+{
+id: "S2",
+date: "05/10/2026"
+},
+
+{
+id: "S3",
+date: "12/10/2026"
+},
+
+{
+id: "S4",
+date: "19/10/2026"
+},
+
+{
+id: "S5",
+date: "26/10/2026"
+},
+
+{
+id: "S6",
+date: "02/11/2026"
+},
+
+{
+id: "S7",
+date: "02/11/2026"
+}
+
+];
+
+
+/* =========================================================
+   AVALIAÇÕES
+========================================================= */
+
+const exams = [
+
+{
+id: "S1",
+date: "28/09/2026"
+},
+
+{
+id: "S2",
+date: "05/10/2026"
+},
+
+{
+id: "S3",
+date: "12/10/2026"
+},
+
+{
+id: "S4",
+date: "19/10/2026"
+},
+
+{
+id: "S5",
+date: "26/10/2026"
+},
+
+{
+id: "S6",
+date: "02/11/2026"
+},
+
+{
+id: "S7",
+date: "02/11/2026"
+}
+
+];
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+let selectedWeek = "S1";
+
 let timerSeconds = 60 * 60;
+
 let timerInterval = null;
 
 
-function updateTimer(){
+/* =========================================================
+   LOCAL STORAGE
+========================================================= */
 
-    const minutes =
-        Math.floor(timerSeconds / 60);
+function saveData(key, value) {
 
-    const seconds =
-        timerSeconds % 60;
-
-    document.getElementById(
-        "timer"
-    ).innerText =
-        `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+localStorage.setItem(
+"univesp_" + key,
+JSON.stringify(value)
+);
 
 }
 
 
-function startTimer(){
+function getData(key, fallback = null) {
 
-    if(timerInterval)
-        return;
+const data = localStorage.getItem(
+"univesp_" + key
+);
 
-    timerInterval =
-        setInterval(()=>{
+if (data === null) {
 
-            if(timerSeconds <= 0){
+return fallback;
 
-                clearInterval(timerInterval);
+}
 
-                timerInterval = null;
+try {
 
-                alert(
-                    "🎉 Parabéns! Sua 1 hora de estudo terminou!"
-                );
+return JSON.parse(data);
 
-                return;
+} catch {
 
-            }
+return fallback;
 
-            timerSeconds--;
-
-            updateTimer();
-
-        },1000);
+}
 
 }
 
 
-function pauseTimer(){
+/* =========================================================
+   DATA DE HOJE
+========================================================= */
 
-    clearInterval(timerInterval);
+function getTodayKey() {
 
-    timerInterval = null;
+const today = new Date();
 
-}
-
-
-function resetTimer(){
-
-    pauseTimer();
-
-    timerSeconds = 60 * 60;
-
-    updateTimer();
+return today.getFullYear() +
+"-" +
+String(today.getMonth() + 1).padStart(2, "0") +
+"-" +
+String(today.getDate()).padStart(2, "0");
 
 }
 
 
-/* =========================
-   INICIALIZAÇÃO
-========================= */
+/* =========================================================
+   REGISTRAR DIA DE ESTUDO
+========================================================= */
+
+function registerStudyDay() {
+
+let studyDays = getData(
+"study_days",
+[]
+);
+
+const today = getTodayKey();
+
+if (!studyDays.includes(today)) {
+
+studyDays.push(today);
+
+saveData(
+"study_days",
+studyDays
+);
+
+}
+
+updateStreak();
+
+}
+
+
+/* =========================================================
+   CALCULAR SEQUÊNCIA
+========================================================= */
+
+function updateStreak() {
+
+const studyDays = getData(
+"study_days",
+[]
+);
+
+if (studyDays.length === 0) {
+
+document.getElementById(
+"streakValue"
+).textContent = "0";
+
+return;
+
+}
+
+let streak = 0;
+
+let date = new Date();
+
+while (true) {
+
+const key =
+date.getFullYear() +
+"-" +
+String(date.getMonth() + 1).padStart(2, "0") +
+"-" +
+String(date.getDate()).padStart(2, "0");
+
+if (studyDays.includes(key)) {
+
+streak++;
+
+date.setDate(
+date.getDate() - 1
+);
+
+} else {
+
+break;
+
+}
+
+}
+
+document.getElementById(
+"streakValue"
+).textContent = streak;
+
+}
+
+
+/* =========================================================
+   PROGRESSO DE UMA SEMANA
+========================================================= */
+
+function getWeekProgress(weekId) {
+
+let completed = 0;
+
+let total = 0;
+
+subjects.forEach(subject => {
+
+for (
+let task = 0;
+task < 3;
+task++
+) {
+
+total++;
+
+const key =
+`${weekId}_${subject.id}_${task}`;
+
+if (
+getData(
+key,
+false
+)
+) {
+
+completed++;
+
+}
+
+}
+
+});
+
+return {
+completed,
+total,
+percent:
+Math.round(
+(completed / total) * 100
+)
+};
+
+}
+
+
+/* =========================================================
+   PROGRESSO DE UMA DISCIPLINA
+========================================================= */
+
+function getSubjectProgress(subjectId) {
+
+let completed = 0;
+
+const total = weeks.length * 3;
+
+weeks.forEach(week => {
+
+for (
+let task = 0;
+task < 3;
+task++
+) {
+
+const key =
+`${week.id}_${subjectId}_${task}`;
+
+if (
+getData(
+key,
+false
+)
+) {
+
+completed++;
+
+}
+
+}
+
+});
+
+return {
+
+completed,
+total,
+percent:
+Math.round(
+(completed / total) * 100
+)
+
+};
+
+}
+
+
+/* =========================================================
+   PROGRESSO GERAL
+========================================================= */
+
+function getGeneralProgress() {
+
+let completed = 0;
+
+let total =
+weeks.length *
+subjects.length *
+3;
+
+weeks.forEach(week => {
+
+subjects.forEach(subject => {
+
+for (
+let task = 0;
+task < 3;
+task++
+) {
+
+const key =
+`${week.id}_${subject.id}_${task}`;
+
+if (
+getData(
+key,
+false
+)
+) {
+
+completed++;
+
+}
+
+}
+
+});
+
+});
+
+return {
+
+completed,
+total,
+percent:
+Math.round(
+(completed / total) * 100
+)
+
+};
+
+}
+
+
+/* =========================================================
+   SEMANAS CONCLUÍDAS
+========================================================= */
+
+function isWeekCompleted(weekId) {
+
+return getData(
+"week_completed_" + weekId,
+false
+);
+
+}
+
+
+function toggleWeekComplete() {
+
+const current =
+isWeekCompleted(
+selectedWeek
+);
+
+saveData(
+"week_completed_" + selectedWeek,
+!current
+);
+
+registerStudyDay();
 
 renderWeeks();
+
 renderDetails();
-renderExams();
-renderTimeline();
+
+updateDashboard();
+
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+function toggleTask(
+weekId,
+subjectId,
+task
+) {
+
+const key =
+`${weekId}_${subjectId}_${task}`;
+
+const current =
+getData(
+key,
+false
+);
+
+saveData(
+key,
+!current
+);
+
+registerStudyDay();
+
+renderWeeks();
+
+renderDetails();
+
+updateDashboard();
+
+}
+
+
+/* =========================================================
+   RENDERIZAR SEMANAS
+========================================================= */
+
+function renderWeeks() {
+
+const container =
+document.getElementById(
+"weeksContainer"
+);
+
+container.innerHTML = "";
+
+weeks.forEach(week => {
+
+const progress =
+getWeekProgress(
+week.id
+);
+
+const completed =
+isWeekCompleted(
+week.id
+);
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className =
+"week-card" +
+(
+week.id === selectedWeek
+? " selected"
+: ""
+) +
+(
+completed
+? " completed"
+: ""
+);
+
+card.onclick = () => {
+
+selectedWeek =
+week.id;
+
+renderWeeks();
+
+renderDetails();
+
+};
+
+card.innerHTML = `
+
+<div class="week-title">
+
+${completed ? "✅" : "📚"}
+
+${week.id}
+
+</div>
+
+<div class="week-date">
+
+Avaliação: ${week.date}
+
+</div>
+
+<div class="week-percent">
+
+${progress.percent}% concluído
+
+</div>
+
+<div class="mini-bar">
+
+<div
+class="mini-fill"
+style="width:${progress.percent}%">
+</div>
+
+</div>
+
+`;
+
+container.appendChild(
+card
+);
+
+});
+
+}
+
+
+/* =========================================================
+   RENDERIZAR DETALHES
+========================================================= */
+
+function renderDetails() {
+
+const week =
+weeks.find(
+w => w.id === selectedWeek
+);
+
+document.getElementById(
+"detailsTitle"
+).textContent =
+`📖 ${week.id} — Conteúdos da semana`;
+
+
+const button =
+document.getElementById(
+"completeWeekBtn"
+);
+
+if (
+isWeekCompleted(
+selectedWeek
+)
+) {
+
+button.textContent =
+"↩️ Desmarcar semana concluída";
+
+} else {
+
+button.textContent =
+"✅ Marcar semana como concluída";
+
+}
+
+
+const container =
+document.getElementById(
+"detailsContainer"
+);
+
+container.innerHTML = "";
+
+
+subjects.forEach(
+subject => {
+
+const detail =
+document.createElement(
+"div"
+);
+
+detail.className =
+"subject-detail";
+
+
+let html = `
+
+<h3>
+📚 ${subject.name}
+</h3>
+
+<p>
+<strong>
+${subject.topics[
+parseInt(
+selectedWeek.substring(1)
+) - 1
+]}
+</strong>
+</p>
+
+`;
+
+
+const tasks = [
+
+"🎥 Ver aula / material",
+
+"📝 Fazer anotações / resumo",
+
+"🧠 Revisar antes da avaliação"
+
+];
+
+
+tasks.forEach(
+(task, index) => {
+
+const key =
+`${selectedWeek}_${subject.id}_${index}`;
+
+const checked =
+getData(
+key,
+false
+);
+
+html += `
+
+<label class="checkbox-row">
+
+<input
+type="checkbox"
+${checked ? "checked" : ""}
+onchange="
+toggleTask(
+'${selectedWeek}',
+'${subject.id}',
+${index}
+)
+">
+
+<span>
+${task}
+</span>
+
+</label>
+
+`;
+
+});
+
+
+html += `
+
+`;
+
+detail.innerHTML =
+html;
+
+container.appendChild(
+detail
+);
+
+});
+
+}
+
+
+/* =========================================================
+   PROGRESSO DAS MATÉRIAS
+========================================================= */
+
+function renderSubjectProgress() {
+
+const container =
+document.getElementById(
+"subjectProgress"
+);
+
+container.innerHTML = "";
+
+
+subjects.forEach(
+subject => {
+
+const progress =
+getSubjectProgress(
+subject.id
+);
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className =
+"subject-card";
+
+
+card.innerHTML = `
+
+<h3>
+📚 ${subject.short}
+</h3>
+
+<p>
+${subject.name}
+</p>
+
+<div class="subject-percent">
+
+${progress.percent}%
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:${progress.percent}%">
+</div>
+
+</div>
+
+<small>
+
+${progress.completed}/${progress.total}
+tarefas concluídas
+
+</small>
+
+`;
+
+container.appendChild(
+card
+);
+
+});
+
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+function updateDashboard() {
+
+const general =
+getGeneralProgress();
+
+
+document.getElementById(
+"generalPercent"
+).textContent =
+general.percent + "%";
+
+
+document.getElementById(
+"generalProgress"
+).style.width =
+general.percent + "%";
+
+
+renderSubjectProgress();
+
+
+let completedWeeks = 0;
+
+weeks.forEach(
+week => {
+
+if (
+isWeekCompleted(
+week.id
+)
+) {
+
+completedWeeks++;
+
+}
+
+});
+
+
+document.getElementById(
+"completedWeeks"
+).textContent =
+`${completedWeeks}/${weeks.length}`;
+
+
+updateStreak();
+
+}
+
+
+/* =========================================================
+   SAUDAÇÃO
+========================================================= */
+
+function updateGreeting() {
+
+const hour =
+new Date().getHours();
+
+let greeting;
+
+if (hour < 12) {
+
+greeting =
+"Bom dia";
+
+} else if (hour < 18) {
+
+greeting =
+"Boa tarde";
+
+} else {
+
+greeting =
+"Boa noite";
+
+}
+
+document.getElementById(
+"greeting"
+).textContent =
+`${greeting}, Sarah! 💜`;
+
+}
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+function renderTodayDate() {
+
+const today =
+new Date();
+
+const formatted =
+today.toLocaleDateString(
+"pt-BR",
+{
+weekday: "long",
+day: "numeric",
+month: "long",
+year: "numeric"
+}
+);
+
+document.getElementById(
+"todayDate"
+).textContent =
+formatted;
+
+}
+
+
+/* =========================================================
+   PRÓXIMA AVALIAÇÃO
+========================================================= */
+
+function getNextExam() {
+
+const today =
+new Date();
+
+const upcoming =
+exams
+.map(exam => {
+
+const [
+day,
+month,
+year
+] =
+exam.date.split("/");
+
+return {
+
+...exam,
+
+dateObject:
+new Date(
+year,
+month - 1,
+day
+)
+
+};
+
+})
+.filter(
+exam =>
+exam.dateObject >= today
+)
+.sort(
+(a,b) =>
+a.dateObject -
+b.dateObject
+);
+
+return upcoming[0];
+
+}
+
+
+function renderNextExam() {
+
+const exam =
+getNextExam();
+
+if (!exam) {
+
+document.getElementById(
+"nextExamHero"
+).textContent =
+"Todas as avaliações concluídas! 🎉";
+
+return;
+
+}
+
+document.getElementById(
+"nextExamHero"
+).textContent =
+`${exam.id} — ${exam.date}`;
+
+}
+
+
+/* =========================================================
+   SEMANA ATUAL
+========================================================= */
+
+function renderCurrentWeek() {
+
+const today =
+new Date();
+
+let current =
+weeks[0];
+
+weeks.forEach(
+week => {
+
+const [
+day,
+month,
+year
+] =
+week.date.split("/");
+
+const examDate =
+new Date(
+year,
+month - 1,
+day
+);
+
+if (
+today <= examDate
+) {
+
+current =
+week;
+
+}
+
+});
+
+
+document.getElementById(
+"currentWeekHero"
+).textContent =
+`📖 ${current.id} em foco`;
+
+const subjectNames =
+subjects
+.map(
+s => s.short
+)
+.join(" • ");
+
+document.getElementById(
+"currentWeekDescription"
+).textContent =
+`${subjectNames} — próxima avaliação em ${current.date}`;
+
+}
+
+
+/* =========================================================
+   AVALIAÇÕES
+========================================================= */
+
+function renderExams() {
+
+const container =
+document.getElementById(
+"examContainer"
+);
+
+container.innerHTML = "";
+
+
+exams.forEach(
+exam => {
+
+const div =
+document.createElement(
+"div"
+);
+
+div.className =
+"exam";
+
+div.innerHTML = `
+
+<div>
+
+<strong>
+📝 ${exam.id}
+</strong>
+
+<span>
+Avaliação da semana ${exam.id}
+</span>
+
+</div>
+
+<div class="exam-date">
+
+${exam.date}
+
+</div>
+
+`;
+
+container.appendChild(
+div
+);
+
+});
+
+}
+
+
+/* =========================================================
+   LINHA DO TEMPO
+========================================================= */
+
+function renderTimeline() {
+
+const container =
+document.getElementById(
+"timelineContainer"
+);
+
+container.innerHTML = "";
+
+
+weeks.forEach(
+week => {
+
+const div =
+document.createElement(
+"div"
+);
+
+div.className =
+"timeline-item";
+
+div.innerHTML = `
+
+<strong>
+${week.id}
+</strong>
+
+<span>
+Avaliação: ${week.date}
+</span>
+
+`;
+
+container.appendChild(
+div
+);
+
+});
+
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+function updateTimer() {
+
+const minutes =
+Math.floor(
+timerSeconds / 60
+);
+
+const seconds =
+timerSeconds % 60;
+
+
+document.getElementById(
+"timerDisplay"
+).textContent =
+`${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+
+}
+
+
+function startTimer() {
+
+if (timerInterval)
+return;
+
+registerStudyDay();
+
+timerInterval =
+setInterval(
+() => {
+
+if (timerSeconds > 0) {
+
+timerSeconds--;
+
 updateTimer();
 
+} else {
+
+clearInterval(
+timerInterval
+);
+
+timerInterval = null;
+
+alert(
+"⏰ Tempo encerrado! Hora de respirar um pouquinho. 💜"
+);
+
+}
+
+},
+1000
+);
+
+}
+
+
+function pauseTimer() {
+
+clearInterval(
+timerInterval
+);
+
+timerInterval = null;
+
+}
+
+
+function resetTimer() {
+
+pauseTimer();
+
+timerSeconds =
+60 * 60;
+
+updateTimer();
+
+}
+
+
+/* =========================================================
+   INICIALIZAÇÃO
+========================================================= */
+
+updateGreeting();
+
+renderTodayDate();
+
+renderCurrentWeek();
+
+renderNextExam();
+
+renderWeeks();
+
+renderDetails();
+
+renderExams();
+
+renderTimeline();
+
+updateDashboard();
+
+updateTimer();
+
+
+/* =========================================================
+   SERVICE WORKER
+========================================================= */
+
+if (
+"serviceWorker"
+in navigator
+) {
+
+window.addEventListener(
+"load",
+() => {
+
+navigator.serviceWorker
+.register("./sw.js")
+
+.then(
+() =>
+console.log(
+"Aplicativo pronto!"
+)
+)
+
+.catch(
+error =>
+console.error(
+"Erro:",
+error
+)
+);
+
+});
+
+}
+
 </script>
 
-<script>
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js")
-            .then(() => console.log("Aplicativo pronto!"))
-            .catch(error => console.error("Erro:", error));
-    });
-}
-</script>
 </body>
-html
+</html>
