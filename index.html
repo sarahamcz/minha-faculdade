@@ -17,9 +17,1053 @@ href="./manifest.json">
 <title>Minha Faculdade — UNIVESP</title>
 
 <style>
-
 * {
     box-sizing: border-box;
+}
+
+:root {
+
+    --bg:
+        #f8f4f7;
+
+    --bg-soft:
+        #f2eaf4;
+
+    --card:
+        #fffdfd;
+
+    --card-soft:
+        #faf5fb;
+
+    --primary:
+        #8b6a98;
+
+    --primary-dark:
+        #70527e;
+
+    --primary-light:
+        #c9add4;
+
+    --text:
+        #392d3e;
+
+    --text-soft:
+        #76677a;
+
+    --border:
+        #eadfeb;
+
+    --green:
+        #b8d8bd;
+
+    --green-dark:
+        #52775a;
+
+    --pink:
+        #e9bfd0;
+
+    --yellow:
+        #ead9a5;
+
+    --blue:
+        #bfd6e5;
+
+    --shadow:
+        rgba(83, 61, 91, .09);
+
+    --header-start:
+        #8b6a98;
+
+    --header-end:
+        #aa89b6;
+
+    --progress-start:
+        #8b6a98;
+
+    --progress-end:
+        #c8a6d4;
+
+    --transition:
+        .3s ease;
+
+}
+
+body.dark {
+
+    --bg:
+        #17121d;
+
+    --bg-soft:
+        #211829;
+
+    --card:
+        #251b2e;
+
+    --card-soft:
+        #2b2035;
+
+    --primary:
+        #b99ac7;
+
+    --primary-dark:
+        #9f7db0;
+
+    --primary-light:
+        #d7c2df;
+
+    --text:
+        #f4edf7;
+
+    --text-soft:
+        #c6b7cc;
+
+    --border:
+        #45354e;
+
+    --green:
+        #a9cdb0;
+
+    --green-dark:
+        #b9dbbf;
+
+    --pink:
+        #e5b8ca;
+
+    --yellow:
+        #e8d59d;
+
+    --blue:
+        #b8d3e5;
+
+    --shadow:
+        rgba(0, 0, 0, .28);
+
+    --header-start:
+        #24172f;
+
+    --header-end:
+        #3c2450;
+
+    --progress-start:
+        #a486b4;
+
+    --progress-end:
+        #d0b5da;
+
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg),
+            var(--bg-soft)
+        );
+
+    color:
+        var(--text);
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--header-start),
+            var(--header-end)
+        );
+
+    color: white;
+
+    padding:
+        28px 20px;
+
+    border-radius:
+        0 0 30px 30px;
+
+    box-shadow:
+        0 8px 25px
+        var(--shadow);
+
+    transition:
+        background var(--transition);
+
+}
+
+.header-content {
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+}
+
+h1 {
+
+    margin:
+        0 0 8px;
+
+    font-size:
+        28px;
+
+}
+
+.subtitle {
+
+    opacity:
+        .9;
+
+    margin:
+        0;
+
+}
+
+
+/* =========================
+   THEME SELECTOR
+========================= */
+
+.theme-selector {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    flex-wrap:
+        wrap;
+
+    margin:
+        15px 0 20px;
+
+}
+
+.theme-button {
+
+    border:
+        1px solid var(--border);
+
+    background:
+        var(--card);
+
+    color:
+        var(--text);
+
+    border-radius:
+        999px;
+
+    padding:
+        9px 14px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        bold;
+
+    transition:
+        all var(--transition);
+
+}
+
+.theme-button:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+.theme-button.active {
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    border-color:
+        var(--primary);
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+    padding:
+        20px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+
+    background:
+        var(--card);
+
+    border-radius:
+        22px;
+
+    padding:
+        20px;
+
+    margin-bottom:
+        18px;
+
+    box-shadow:
+        0 7px 22px
+        var(--shadow);
+
+    border:
+        1px solid
+        var(--border);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.card h2 {
+
+    margin-top:
+        0;
+
+}
+
+.hero {
+
+    margin-top:
+        -10px;
+
+}
+
+.hero-title {
+
+    font-size:
+        25px;
+
+    font-weight:
+        bold;
+
+}
+
+.hero-subtitle {
+
+    color:
+        var(--text-soft);
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container {
+
+    background:
+        var(--bg-soft);
+
+    border-radius:
+        20px;
+
+    height:
+        14px;
+
+    overflow:
+        hidden;
+
+    margin-top:
+        12px;
+
+}
+
+.progress-bar {
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--progress-start),
+            var(--progress-end)
+        );
+
+    border-radius:
+        20px;
+
+    transition:
+        width .4s ease;
+
+}
+
+.progress-text {
+
+    margin-top:
+        8px;
+
+    font-size:
+        14px;
+
+    color:
+        var(--text-soft);
+
+}
+
+
+/* =========================
+   SUBJECTS
+========================= */
+
+.subject-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap:
+        15px;
+
+}
+
+.subject {
+
+    border:
+        2px solid
+        var(--border);
+
+    border-radius:
+        18px;
+
+    padding:
+        18px;
+
+    background:
+        var(--card-soft);
+
+    transition:
+        all var(--transition);
+
+}
+
+.subject:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+.subject-title {
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        8px;
+
+}
+
+.subject-icon {
+
+    font-size:
+        28px;
+
+}
+
+
+/* =========================
+   WEEKS
+========================= */
+
+.week-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(150px, 1fr)
+        );
+
+    gap:
+        12px;
+
+}
+
+.week-button {
+
+    border:
+        1px solid
+        var(--border);
+
+    padding:
+        16px;
+
+    border-radius:
+        16px;
+
+    background:
+        var(--card-soft);
+
+    color:
+        var(--text);
+
+    cursor:
+        pointer;
+
+    font-weight:
+        bold;
+
+    transition:
+        all var(--transition);
+
+}
+
+.week-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+.week-button.active {
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+}
+
+.week-button.completed {
+
+    background:
+        var(--green);
+
+    color:
+        var(--green-dark);
+
+}
+
+
+/* =========================
+   SUBJECT SECTION
+========================= */
+
+.subject-section {
+
+    border-top:
+        1px solid
+        var(--border);
+
+    padding-top:
+        20px;
+
+    margin-top:
+        20px;
+
+}
+
+.subject-section:first-child {
+
+    border-top:
+        none;
+
+    margin-top:
+        0;
+
+}
+
+.topic {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.check {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin:
+        10px 0;
+
+}
+
+.check input {
+
+    width:
+        18px;
+
+    height:
+        18px;
+
+    accent-color:
+        var(--primary);
+
+}
+
+
+/* =========================
+   NOTES
+========================= */
+
+textarea {
+
+    width:
+        100%;
+
+    min-height:
+        150px;
+
+    resize:
+        vertical;
+
+    border:
+        2px solid
+        var(--border);
+
+    border-radius:
+        16px;
+
+    padding:
+        14px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    color:
+        var(--text);
+
+    outline:
+        none;
+
+    background:
+        var(--card-soft);
+
+    transition:
+        all var(--transition);
+
+}
+
+textarea:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139,106,152,.12);
+
+}
+
+.notes-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+.voice-area {
+
+    margin-top:
+        12px;
+
+}
+
+.voice-button {
+
+    border:
+        none;
+
+    border-radius:
+        14px;
+
+    padding:
+        11px 16px;
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        bold;
+
+    transition:
+        all var(--transition);
+
+}
+
+.voice-button:hover {
+
+    transform:
+        translateY(-1px);
+
+    background:
+        var(--primary-dark);
+
+}
+
+.voice-button.recording {
+
+    background:
+        #c65d73;
+
+    animation:
+        pulse 1.3s infinite;
+
+}
+
+.voice-status {
+
+    display:
+        inline-block;
+
+    margin-left:
+        10px;
+
+    font-size:
+        13px;
+
+    color:
+        var(--text-soft);
+
+}
+
+.clear-button {
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    padding:
+        9px 13px;
+
+    background:
+        var(--bg-soft);
+
+    color:
+        var(--text-soft);
+
+    cursor:
+        pointer;
+
+}
+
+.saved {
+
+    font-size:
+        12px;
+
+    color:
+        var(--green-dark);
+
+    margin-top:
+        7px;
+
+}
+
+@keyframes pulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(198,93,115,.5);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 10px
+            rgba(198,93,115,0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(198,93,115,0);
+
+    }
+
+}
+
+
+/* =========================
+   EXAMS
+========================= */
+
+.exam {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        14px;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--card-soft);
+
+    border:
+        1px solid
+        var(--border);
+
+    margin-bottom:
+        10px;
+
+}
+
+.exam-date {
+
+    font-weight:
+        bold;
+
+    color:
+        var(--primary);
+
+}
+
+
+/* =========================
+   STREAK
+========================= */
+
+.streak {
+
+    font-size:
+        30px;
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+.timer {
+
+    text-align:
+        center;
+
+}
+
+.timer-display {
+
+    font-size:
+        48px;
+
+    font-weight:
+        bold;
+
+    color:
+        var(--primary);
+
+    margin:
+        15px 0;
+
+}
+
+.timer button {
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    padding:
+        10px 15px;
+
+    margin:
+        4px;
+
+    cursor:
+        pointer;
+
+    background:
+        var(--bg-soft);
+
+    color:
+        var(--text);
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align:
+        center;
+
+    padding:
+        30px 20px;
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    header {
+
+        padding:
+            23px 17px;
+
+    }
+
+    h1 {
+
+        font-size:
+            24px;
+
+    }
+
+    .container {
+
+        padding:
+            14px;
+
+    }
+
+    .card {
+
+        padding:
+            16px;
+
+    }
+
+    .timer-display {
+
+        font-size:
+            40px;
+
+    }
+
 }
 
 body {
@@ -616,7 +1660,36 @@ footer {
 <p class="subtitle">
     Meu painel pessoal de estudos — UNIVESP
 </p>
+<div class="theme-selector">
 
+    <button
+        id="theme-light"
+        class="theme-button"
+        onclick="setTheme('light')">
+
+        ☀️ Claro
+
+    </button>
+
+    <button
+        id="theme-dark"
+        class="theme-button"
+        onclick="setTheme('dark')">
+
+        🌙 Escuro
+
+    </button>
+
+    <button
+        id="theme-auto"
+        class="theme-button"
+        onclick="setTheme('auto')">
+
+        ⚙️ Automático
+
+    </button>
+
+</div>
 </div>
 
 </header>
