@@ -9,7 +9,7 @@
 content="width=device-width, initial-scale=1.0">
 
 <meta name="theme-color"
-content="#8b6a98">
+content="#DFCCB1">
 
 <link rel="manifest"
 href="./manifest.json">
@@ -29,110 +29,173 @@ href="./manifest.json">
 
 /* =========================
    CORES — MODO CLARO
-   CREME ACONCHEGANTE
+   WARM BEIGE / SAGE / TERRACOTA
 ========================= */
 
 :root {
 
-    --bg: #ebe3d5;
+    /* Base */
 
-    --bg-soft: #e2d8c8;
+    --bg: #DFCCB1;
 
-    --card: #f2ebdf;
+    --bg-soft: #D4BE9F;
 
-    --card-soft: #eee5d7;
+    --card: #E9DCC6;
 
-    --primary: #80618c;
+    --card-soft: #E3D2B8;
 
-    --primary-dark: #684b75;
 
-    --primary-light: #bda4c7;
+    /* Principal */
 
-    --text: #403640;
+    --primary: #A76D5E;
 
-    --text-soft: #756b73;
+    --primary-dark: #846044;
 
-    --border: #d8cbbb;
+    --primary-light: #C4A071;
 
-    --green: #b8c9a9;
 
-    --green-dark: #53664d;
+    /* Texto */
 
-    --pink: #d9aebd;
+    --text: #4F4037;
 
-    --yellow: #dcc98d;
+    --text-soft: #75665B;
 
-    --blue: #afc3cd;
 
-    --shadow: rgba(74, 58, 67, .12);
+    /* Bordas */
 
-    --header-start: #80618c;
+    --border: #C9B392;
 
-    --header-end: #9a7aa4;
 
-    --progress-start: #80618c;
+    /* Cores das matérias */
 
-    --progress-end: #b99bc4;
+    --green: #98A086;
 
-    --focus-ring: rgba(128,97,140,.18);
+    --green-dark: #59634D;
 
-    --header-text: #fffaf5;
+    --pink: #A76D5E;
 
-    --transition: .45s ease;
+    --yellow: #C4A071;
+
+    --blue: #9BB9C2;
+
+    --lilac: #B5A2AA;
+
+
+    /* Sombras */
+
+    --shadow: rgba(76, 57, 43, .15);
+
+
+    /* Header */
+
+    --header-start: #C4A071;
+
+    --header-end: #A76D5E;
+
+
+    /* Progresso */
+
+    --progress-start: #98A086;
+
+    --progress-end: #A76D5E;
+
+
+    /* Foco */
+
+    --focus-ring: rgba(167,109,94,.22);
+
+
+    /* Texto do header */
+
+    --header-text: #FFF8EF;
+
+
+    --transition: .35s ease;
 
 }
 
 
 /* =========================
    CORES — MODO ESCURO
-   AMEIXA ACONCHEGANTE
+   BLUE / MAUVE / TEAL / PLUM
 ========================= */
 
 body.dark {
 
-    --bg: #211923;
+    /* Base */
 
-    --bg-soft: #2b202d;
+    --bg: #333A57;
 
-    --card: #302432;
+    --bg-soft: #30364F;
 
-    --card-soft: #382a3b;
+    --card: #422C47;
 
-    --primary: #b79ac4;
+    --card-soft: #49344D;
 
-    --primary-dark: #9d7fac;
 
-    --primary-light: #d3bedb;
+    /* Principal */
 
-    --text: #f1e8ee;
+    --primary: #AD869B;
 
-    --text-soft: #c5b6c0;
+    --primary-dark: #88BAC8;
 
-    --border: #4a394d;
+    --primary-light: #C19DAC;
 
-    --green: #9fb89e;
 
-    --green-dark: #c0d5bb;
+    /* Texto */
 
-    --pink: #d9a8bb;
+    --text: #F1E9E6;
 
-    --yellow: #d7c184;
+    --text-soft: #D0C4C8;
 
-    --blue: #a8c1ce;
 
-    --shadow: rgba(0, 0, 0, .24);
+    /* Bordas */
 
-    --header-start: #2a1d32;
+    --border: #5B5367;
 
-    --header-end: #493151;
 
-    --progress-start: #a88ab5;
+    /* Cores das matérias */
 
-    --progress-end: #cdb1d5;
+    --green: #336063;
 
-    --focus-ring: rgba(183,154,196,.20);
+    --green-dark: #B1CDCA;
 
-    --header-text: #fff7f2;
+    --pink: #AD869B;
+
+    --yellow: #C4A071;
+
+    --blue: #88BAC8;
+
+    --lilac: #AD869B;
+
+
+    /* Sombras */
+
+    --shadow: rgba(0, 0, 0, .28);
+
+
+    /* Header */
+
+    --header-start: #422C47;
+
+    --header-end: #333A57;
+
+
+    /* Progresso */
+
+    --progress-start: #88BAC8;
+
+    --progress-end: #AD869B;
+
+
+    /* Foco */
+
+    --focus-ring: rgba(136,186,200,.22);
+
+
+    /* Texto do header */
+
+    --header-text: #F8F0ED;
 
 }
 
@@ -332,13 +395,13 @@ h1 {
 .theme-button.active {
 
     background:
-        #fffaf5;
+        #FFF8EF;
 
     color:
         var(--primary-dark);
 
     border-color:
-        #fffaf5;
+        #FFF8EF;
 
 }
 
@@ -521,6 +584,70 @@ h1 {
     background:
         var(--card-soft);
 
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* Barrinha colorida de cada matéria */
+
+.subject::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    height:
+        5px;
+
+    background:
+        var(--border);
+
+}
+
+
+/* EJA — verde */
+
+.subject:nth-child(1)::before {
+
+    background:
+        var(--green);
+
+}
+
+
+/* Literatura — dusty rose */
+
+.subject:nth-child(2)::before {
+
+    background:
+        var(--pink);
+
+}
+
+
+/* Corpo e Arte — azul */
+
+.subject:nth-child(3)::before {
+
+    background:
+        var(--blue);
+
 }
 
 
@@ -599,6 +726,64 @@ h1 {
 }
 
 
+/* Cores variadas das semanas */
+
+.week-button:nth-child(1) {
+
+    border-color:
+        var(--green);
+
+}
+
+
+.week-button:nth-child(2) {
+
+    border-color:
+        var(--pink);
+
+}
+
+
+.week-button:nth-child(3) {
+
+    border-color:
+        var(--blue);
+
+}
+
+
+.week-button:nth-child(4) {
+
+    border-color:
+        var(--yellow);
+
+}
+
+
+.week-button:nth-child(5) {
+
+    border-color:
+        var(--lilac);
+
+}
+
+
+.week-button:nth-child(6) {
+
+    border-color:
+        var(--green);
+
+}
+
+
+.week-button:nth-child(7) {
+
+    border-color:
+        var(--pink);
+
+}
+
+
 .week-button:hover {
 
     transform:
@@ -658,6 +843,44 @@ h1 {
 
     margin-top:
         0;
+
+}
+
+
+/* Cores das divisões das matérias */
+
+.subject-section:nth-child(2) {
+
+    border-left:
+        4px solid
+        var(--green);
+
+    padding-left:
+        16px;
+
+}
+
+
+.subject-section:nth-child(3) {
+
+    border-left:
+        4px solid
+        var(--pink);
+
+    padding-left:
+        16px;
+
+}
+
+
+.subject-section:nth-child(4) {
+
+    border-left:
+        4px solid
+        var(--blue);
+
+    padding-left:
+        16px;
 
 }
 
@@ -895,7 +1118,7 @@ textarea:focus {
 .voice-button.recording {
 
     background:
-        #bd6579;
+        #8F5A50;
 
     animation:
         pulse 1.3s infinite;
@@ -940,7 +1163,7 @@ textarea:focus {
 
         box-shadow:
             0 0 0 0
-            rgba(189,101,121,.5);
+            rgba(167,109,94,.5);
 
     }
 
@@ -948,7 +1171,7 @@ textarea:focus {
 
         box-shadow:
             0 0 0 10px
-            rgba(189,101,121,0);
+            rgba(167,109,94,0);
 
     }
 
@@ -956,7 +1179,7 @@ textarea:focus {
 
         box-shadow:
             0 0 0 0
-            rgba(189,101,121,0);
+            rgba(167,109,94,0);
 
     }
 
@@ -996,6 +1219,71 @@ textarea:focus {
 
     margin-bottom:
         10px;
+
+}
+
+
+/* Cores alternadas das avaliações */
+
+.exam:nth-child(1) {
+
+    border-left:
+        4px solid
+        var(--green);
+
+}
+
+
+.exam:nth-child(2) {
+
+    border-left:
+        4px solid
+        var(--pink);
+
+}
+
+
+.exam:nth-child(3) {
+
+    border-left:
+        4px solid
+        var(--blue);
+
+}
+
+
+.exam:nth-child(4) {
+
+    border-left:
+        4px solid
+        var(--yellow);
+
+}
+
+
+.exam:nth-child(5) {
+
+    border-left:
+        4px solid
+        var(--lilac);
+
+}
+
+
+.exam:nth-child(6) {
+
+    border-left:
+        4px solid
+        var(--green);
+
+}
+
+
+.exam:nth-child(7) {
+
+    border-left:
+        4px solid
+        var(--pink);
 
 }
 
@@ -1803,7 +2091,40 @@ function applyTheme() {
     }
 
 
+    updateThemeColor();
+
     updateThemeButtons();
+
+}
+
+
+function updateThemeColor() {
+
+    const meta =
+        document.querySelector(
+            'meta[name="theme-color"]'
+        );
+
+
+    if(!meta) {
+
+        return;
+
+    }
+
+
+    const isDark =
+        document.body.classList.contains(
+            "dark"
+        );
+
+
+    meta.setAttribute(
+        "content",
+        isDark
+        ? "#333A57"
+        : "#DFCCB1"
+    );
 
 }
 
@@ -1875,21 +2196,21 @@ function setGreeting() {
     if(hour < 12) {
 
         greeting =
-        "Bom dia, Sarah! ☀️💜";
+        "Bom dia, Sarah! ☀️🌿";
 
     }
 
     else if(hour < 18) {
 
         greeting =
-        "Boa tarde, Sarah! 🌷💜";
+        "Boa tarde, Sarah! 🌷🤎";
 
     }
 
     else {
 
         greeting =
-        "Boa noite, Sarah! 🌙💜";
+        "Boa noite, Sarah! 🌙🩵";
 
     }
 
