@@ -17,138 +17,112 @@ href="./manifest.json">
 <title>Minha Faculdade — UNIVESP</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 * {
     box-sizing: border-box;
 }
 
+
+/* =========================
+   CORES — MODO CLARO
+========================= */
+
 :root {
 
-    --bg:
-        #f8f4f7;
+    --bg: #f8f4f7;
 
-    --bg-soft:
-        #f2eaf4;
+    --bg-soft: #f2eaf4;
 
-    --card:
-        #fffdfd;
+    --card: #fffdfd;
 
-    --card-soft:
-        #faf5fb;
+    --card-soft: #faf5fb;
 
-    --primary:
-        #8b6a98;
+    --primary: #8b6a98;
 
-    --primary-dark:
-        #70527e;
+    --primary-dark: #70527e;
 
-    --primary-light:
-        #c9add4;
+    --primary-light: #c9add4;
 
-    --text:
-        #392d3e;
+    --text: #392d3e;
 
-    --text-soft:
-        #76677a;
+    --text-soft: #76677a;
 
-    --border:
-        #eadfeb;
+    --border: #eadfeb;
 
-    --green:
-        #b8d8bd;
+    --green: #b8d8bd;
 
-    --green-dark:
-        #52775a;
+    --green-dark: #52775a;
 
-    --pink:
-        #e9bfd0;
+    --pink: #e9bfd0;
 
-    --yellow:
-        #ead9a5;
+    --yellow: #ead9a5;
 
-    --blue:
-        #bfd6e5;
+    --blue: #bfd6e5;
 
-    --shadow:
-        rgba(83, 61, 91, .09);
+    --shadow: rgba(83, 61, 91, .09);
 
-    --header-start:
-        #8b6a98;
+    --header-start: #8b6a98;
 
-    --header-end:
-        #aa89b6;
+    --header-end: #aa89b6;
 
-    --progress-start:
-        #8b6a98;
+    --progress-start: #8b6a98;
 
-    --progress-end:
-        #c8a6d4;
+    --progress-end: #c8a6d4;
 
-    --transition:
-        .3s ease;
+    --transition: .3s ease;
 
 }
 
+
+/* =========================
+   CORES — MODO ESCURO
+========================= */
+
 body.dark {
 
-    --bg:
-        #17121d;
+    --bg: #17121d;
 
-    --bg-soft:
-        #211829;
+    --bg-soft: #211829;
 
-    --card:
-        #251b2e;
+    --card: #251b2e;
 
-    --card-soft:
-        #2b2035;
+    --card-soft: #2b2035;
 
-    --primary:
-        #b99ac7;
+    --primary: #b99ac7;
 
-    --primary-dark:
-        #9f7db0;
+    --primary-dark: #9f7db0;
 
-    --primary-light:
-        #d7c2df;
+    --primary-light: #d7c2df;
 
-    --text:
-        #f4edf7;
+    --text: #f4edf7;
 
-    --text-soft:
-        #c6b7cc;
+    --text-soft: #c6b7cc;
 
-    --border:
-        #45354e;
+    --border: #45354e;
 
-    --green:
-        #a9cdb0;
+    --green: #a9cdb0;
 
-    --green-dark:
-        #b9dbbf;
+    --green-dark: #b9dbbf;
 
-    --pink:
-        #e5b8ca;
+    --pink: #e5b8ca;
 
-    --yellow:
-        #e8d59d;
+    --yellow: #e8d59d;
 
-    --blue:
-        #b8d3e5;
+    --blue: #b8d3e5;
 
-    --shadow:
-        rgba(0, 0, 0, .28);
+    --shadow: rgba(0, 0, 0, .28);
 
-    --header-start:
-        #24172f;
+    --header-start: #24172f;
 
-    --header-end:
-        #3c2450;
+    --header-end: #3c2450;
 
-    --progress-start:
-        #a486b4;
+    --progress-start: #a486b4;
 
-    --progress-end:
-        #d0b5da;
+    --progress-end: #d0b5da;
 
 }
 
@@ -173,8 +147,7 @@ body {
             var(--bg-soft)
         );
 
-    color:
-        var(--text);
+    color: var(--text);
 
     transition:
         background var(--transition),
@@ -198,8 +171,7 @@ header {
 
     color: white;
 
-    padding:
-        28px 20px;
+    padding: 28px 20px;
 
     border-radius:
         0 0 30px 30px;
@@ -215,11 +187,9 @@ header {
 
 .header-content {
 
-    max-width:
-        1000px;
+    max-width: 1000px;
 
-    margin:
-        auto;
+    margin: auto;
 
 }
 
@@ -235,17 +205,15 @@ h1 {
 
 .subtitle {
 
-    opacity:
-        .9;
+    opacity: .9;
 
-    margin:
-        0;
+    margin: 0;
 
 }
 
 
 /* =========================
-   THEME SELECTOR
+   SELETOR DE TEMA
 ========================= */
 
 .theme-selector {
@@ -256,27 +224,27 @@ h1 {
     justify-content:
         center;
 
-    gap:
-        7px;
+    gap: 8px;
 
     flex-wrap:
         wrap;
 
     margin:
-        15px 0 20px;
+        18px 0 4px;
 
 }
 
 .theme-button {
 
     border:
-        1px solid var(--border);
+        1px solid
+        rgba(255,255,255,.35);
 
     background:
-        var(--card);
+        rgba(255,255,255,.14);
 
     color:
-        var(--text);
+        white;
 
     border-radius:
         999px;
@@ -293,25 +261,31 @@ h1 {
     transition:
         all var(--transition);
 
+    backdrop-filter:
+        blur(5px);
+
 }
 
 .theme-button:hover {
 
     transform:
-        translateY(-1px);
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,.22);
 
 }
 
 .theme-button.active {
 
     background:
-        var(--primary);
-
-    color:
         white;
 
+    color:
+        var(--primary-dark);
+
     border-color:
-        var(--primary);
+        white;
 
 }
 
@@ -400,7 +374,7 @@ h1 {
 
 
 /* =========================
-   PROGRESS
+   PROGRESSO
 ========================= */
 
 .progress-container {
@@ -457,7 +431,7 @@ h1 {
 
 
 /* =========================
-   SUBJECTS
+   MATÉRIAS
 ========================= */
 
 .subject-grid {
@@ -522,7 +496,7 @@ h1 {
 
 
 /* =========================
-   WEEKS
+   SEMANAS
 ========================= */
 
 .week-grid {
@@ -585,6 +559,9 @@ h1 {
     color:
         white;
 
+    border-color:
+        var(--primary);
+
 }
 
 .week-button.completed {
@@ -599,7 +576,7 @@ h1 {
 
 
 /* =========================
-   SUBJECT SECTION
+   SEÇÃO DAS MATÉRIAS
 ========================= */
 
 .subject-section {
@@ -675,8 +652,34 @@ h1 {
 
 
 /* =========================
-   NOTES
+   ANOTAÇÕES
 ========================= */
+
+.notes-area {
+
+    margin-top:
+        18px;
+
+}
+
+.notes-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+}
 
 textarea {
 
@@ -717,6 +720,9 @@ textarea {
     transition:
         all var(--transition);
 
+    margin-top:
+        12px;
+
 }
 
 textarea:focus {
@@ -730,24 +736,47 @@ textarea:focus {
 
 }
 
-.notes-header {
 
-    display:
-        flex;
+/* =========================
+   BOTÃO LIMPAR
+========================= */
 
-    justify-content:
-        space-between;
+.clear-button {
 
-    align-items:
-        center;
+    border:
+        none;
 
-    gap:
-        10px;
+    border-radius:
+        12px;
 
-    flex-wrap:
-        wrap;
+    padding:
+        9px 13px;
+
+    background:
+        var(--bg-soft);
+
+    color:
+        var(--text-soft);
+
+    cursor:
+        pointer;
+
+    transition:
+        all var(--transition);
 
 }
+
+.clear-button:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================
+   VOZ
+========================= */
 
 .voice-area {
 
@@ -820,28 +849,6 @@ textarea:focus {
 
 }
 
-.clear-button {
-
-    border:
-        none;
-
-    border-radius:
-        12px;
-
-    padding:
-        9px 13px;
-
-    background:
-        var(--bg-soft);
-
-    color:
-        var(--text-soft);
-
-    cursor:
-        pointer;
-
-}
-
 .saved {
 
     font-size:
@@ -885,7 +892,7 @@ textarea:focus {
 
 
 /* =========================
-   EXAMS
+   AVALIAÇÕES
 ========================= */
 
 .exam {
@@ -932,7 +939,7 @@ textarea:focus {
 
 
 /* =========================
-   STREAK
+   SEQUÊNCIA
 ========================= */
 
 .streak {
@@ -999,6 +1006,16 @@ textarea:focus {
     font-weight:
         bold;
 
+    transition:
+        all var(--transition);
+
+}
+
+.timer button:hover {
+
+    transform:
+        translateY(-1px);
+
 }
 
 
@@ -1064,580 +1081,23 @@ footer {
 
     }
 
-}
+    .theme-button {
 
-body {
+        padding:
+            8px 11px;
 
-    margin: 0;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7f3f8,
-            #eee5f3
-        );
-
-    color: #34263b;
-
-}
-
-header {
-
-    background:
-        linear-gradient(
-            135deg,
-            #7c5a8c,
-            #9b77ad
-        );
-
-    color: white;
-
-    padding: 28px 20px;
-
-    border-radius:
-        0 0 28px 28px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(80,50,90,.18);
-
-}
-
-.header-content {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-}
-
-h1 {
-
-    margin: 0 0 8px;
-
-    font-size: 28px;
-
-}
-
-.subtitle {
-
-    opacity: .9;
-
-    margin: 0;
-
-}
-
-.container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 20px;
-
-}
-
-.card {
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 20px;
-
-    margin-bottom: 18px;
-
-    box-shadow:
-        0 6px 20px
-        rgba(60,40,70,.08);
-
-}
-
-.card h2 {
-
-    margin-top: 0;
-
-}
-
-.hero {
-
-    margin-top: -10px;
-
-}
-
-.hero-title {
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-}
-
-.hero-subtitle {
-
-    color: #705d78;
-
-}
-
-.progress-container {
-
-    background: #eee8f1;
-
-    border-radius: 20px;
-
-    height: 14px;
-
-    overflow: hidden;
-
-    margin-top: 12px;
-
-}
-
-.progress-bar {
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #7c5a8c,
-            #b58ac8
-        );
-
-    border-radius: 20px;
-
-    transition: width .4s ease;
-
-}
-
-.progress-text {
-
-    margin-top: 8px;
-
-    font-size: 14px;
-
-    color: #705d78;
-
-}
-
-.subject-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(230px, 1fr)
-        );
-
-    gap: 15px;
-
-}
-
-.subject {
-
-    border: 2px solid #eee6f1;
-
-    border-radius: 18px;
-
-    padding: 18px;
-
-}
-
-.subject-title {
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
-
-}
-
-.subject-icon {
-
-    font-size: 28px;
-
-}
-
-.week-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(150px, 1fr)
-        );
-
-    gap: 12px;
-
-}
-
-.week-button {
-
-    border: none;
-
-    padding: 16px;
-
-    border-radius: 16px;
-
-    background: #f0e8f3;
-
-    color: #4e3b56;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    transition: .2s;
-
-}
-
-.week-button:hover {
-
-    transform: translateY(-2px);
-
-}
-
-.week-button.active {
-
-    background: #7c5a8c;
-
-    color: white;
-
-}
-
-.week-button.completed {
-
-    background: #dcefdc;
-
-    color: #315d31;
-
-}
-
-.subject-section {
-
-    border-top: 1px solid #eee;
-
-    padding-top: 20px;
-
-    margin-top: 20px;
-
-}
-
-.subject-section:first-child {
-
-    border-top: none;
-
-    margin-top: 0;
-
-}
-
-.topic {
-
-    color: #6c5b72;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-}
-
-.check {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin: 10px 0;
-
-}
-
-.check input {
-
-    width: 18px;
-
-    height: 18px;
-
-    accent-color: #7c5a8c;
-
-}
-
-textarea {
-
-    width: 100%;
-
-    min-height: 150px;
-
-    resize: vertical;
-
-    border: 2px solid #e5dbea;
-
-    border-radius: 16px;
-
-    padding: 14px;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    color: #34263b;
-
-    outline: none;
-
-    background: #fcfaff;
-
-    transition: .2s;
-
-}
-
-textarea:focus {
-
-    border-color: #9b77ad;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(124,90,140,.1);
-
-}
-
-.notes-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-}
-
-.voice-area {
-
-    margin-top: 12px;
-
-}
-
-.voice-button {
-
-    border: none;
-
-    border-radius: 14px;
-
-    padding: 11px 16px;
-
-    background: #7c5a8c;
-
-    color: white;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    transition: .2s;
-
-}
-
-.voice-button:hover {
-
-    transform: translateY(-1px);
-
-    background: #6c4b7b;
-
-}
-
-.voice-button.recording {
-
-    background: #c94b63;
-
-    animation: pulse 1.3s infinite;
-
-}
-
-.voice-status {
-
-    display: inline-block;
-
-    margin-left: 10px;
-
-    font-size: 13px;
-
-    color: #755f7c;
-
-}
-
-.clear-button {
-
-    border: none;
-
-    border-radius: 12px;
-
-    padding: 9px 13px;
-
-    background: #f0e9f2;
-
-    color: #6a526f;
-
-    cursor: pointer;
-
-}
-
-.saved {
-
-    font-size: 12px;
-
-    color: #618061;
-
-    margin-top: 7px;
-
-}
-
-@keyframes pulse {
-
-    0% {
-        box-shadow:
-            0 0 0 0
-            rgba(201,75,99,.5);
-    }
-
-    70% {
-        box-shadow:
-            0 0 0 10px
-            rgba(201,75,99,0);
-    }
-
-    100% {
-        box-shadow:
-            0 0 0 0
-            rgba(201,75,99,0);
-    }
-
-}
-
-.exam {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 14px;
-
-    border-radius: 14px;
-
-    background: #f8f4fa;
-
-    margin-bottom: 10px;
-
-}
-
-.exam-date {
-
-    font-weight: bold;
-
-    color: #7c5a8c;
-
-}
-
-.streak {
-
-    font-size: 30px;
-
-    font-weight: bold;
-
-}
-
-.timer {
-
-    text-align: center;
-
-}
-
-.timer-display {
-
-    font-size: 48px;
-
-    font-weight: bold;
-
-    color: #7c5a8c;
-
-    margin: 15px 0;
-
-}
-
-.timer button {
-
-    border: none;
-
-    border-radius: 12px;
-
-    padding: 10px 15px;
-
-    margin: 4px;
-
-    cursor: pointer;
-
-    background: #eee5f2;
-
-    color: #4d3955;
-
-    font-weight: bold;
-
-}
-
-footer {
-
-    text-align: center;
-
-    padding: 30px 20px;
-
-    color: #806d87;
-
-    font-size: 13px;
-
-}
-
-@media(max-width:600px) {
-
-    header {
-
-        padding: 23px 17px;
+        font-size:
+            13px;
 
     }
 
-    h1 {
+    .voice-status {
 
-        font-size: 24px;
+        display:
+            block;
 
-    }
-
-    .container {
-
-        padding: 14px;
-
-    }
-
-    .card {
-
-        padding: 16px;
-
-    }
-
-    .timer-display {
-
-        font-size: 40px;
+        margin:
+            8px 0 0;
 
     }
 
@@ -1647,275 +1107,373 @@ footer {
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<div class="header-content">
+    <div class="header-content">
 
-<h1 id="greeting">
-    Minha Faculdade 💜
-</h1>
+        <h1 id="greeting">
+            Minha Faculdade 💜
+        </h1>
 
-<p class="subtitle">
-    Meu painel pessoal de estudos — UNIVESP
-</p>
-<div class="theme-selector">
+        <p class="subtitle">
+            Meu painel pessoal de estudos — UNIVESP
+        </p>
 
-    <button
-        id="theme-light"
-        class="theme-button"
-        onclick="setTheme('light')">
 
-        ☀️ Claro
+        <!-- TEMA -->
 
-    </button>
+        <div class="theme-selector">
 
-    <button
-        id="theme-dark"
-        class="theme-button"
-        onclick="setTheme('dark')">
+            <button
+                id="theme-light"
+                class="theme-button"
+                onclick="setTheme('light')">
 
-        🌙 Escuro
+                ☀️ Claro
 
-    </button>
+            </button>
 
-    <button
-        id="theme-auto"
-        class="theme-button"
-        onclick="setTheme('auto')">
 
-        ⚙️ Automático
+            <button
+                id="theme-dark"
+                class="theme-button"
+                onclick="setTheme('dark')">
 
-    </button>
+                🌙 Escuro
 
-</div>
-</div>
+            </button>
+
+
+            <button
+                id="theme-auto"
+                class="theme-button"
+                onclick="setTheme('auto')">
+
+                ⚙️ Automático
+
+            </button>
+
+        </div>
+
+    </div>
 
 </header>
 
 
+<!-- =========================
+     CONTEÚDO
+========================= -->
+
 <main class="container">
 
 
-<!-- HERO -->
+    <!-- HERO -->
 
-<section class="card hero">
+    <section class="card hero">
 
-<div class="hero-title">
-    📚 Semana atual
-</div>
+        <div class="hero-title">
 
-<p id="currentWeekText"
-class="hero-subtitle">
-    Carregando...
-</p>
+            📚 Semana atual
 
-<div class="progress-container">
+        </div>
 
-<div
-id="generalProgress"
-class="progress-bar"
-style="width:0%">
-</div>
 
-</div>
+        <p
+            id="currentWeekText"
+            class="hero-subtitle">
 
-<div
-id="generalProgressText"
-class="progress-text">
-    0% concluído
-</div>
+            Carregando...
 
-</section>
+        </p>
 
 
-<!-- STREAK -->
+        <div class="progress-container">
 
-<section class="card">
+            <div
+                id="generalProgress"
+                class="progress-bar"
+                style="width:0%">
 
-<h2>🔥 Minha sequência</h2>
+            </div>
 
-<div
-id="streak"
-class="streak">
-0 dias
-</div>
+        </div>
 
-<p>
-Dias consecutivos em que você marcou alguma atividade como concluída.
-</p>
 
-</section>
+        <div
+            id="generalProgressText"
+            class="progress-text">
 
+            0% concluído
 
-<!-- SUBJECTS -->
+        </div>
 
-<section class="card">
+    </section>
 
-<h2>📊 Progresso das matérias</h2>
 
-<div class="subject-grid">
+    <!-- STREAK -->
 
-<div class="subject">
+    <section class="card">
 
-<div class="subject-icon">📖</div>
+        <h2>
+            🔥 Minha sequência
+        </h2>
 
-<div class="subject-title">
-Educação de Jovens e Adultos
-</div>
 
-<div
-class="progress-container">
+        <div
+            id="streak"
+            class="streak">
 
-<div
-id="progress-eja"
-class="progress-bar"
-style="width:0%">
-</div>
+            0 dias
 
-</div>
+        </div>
 
-<div
-id="text-eja"
-class="progress-text">
-0%
-</div>
 
-</div>
+        <p>
 
+            Dias consecutivos em que você marcou
+            alguma atividade como concluída.
 
-<div class="subject">
+        </p>
 
-<div class="subject-icon">📚</div>
+    </section>
 
-<div class="subject-title">
-Literatura infantojuvenil
-</div>
 
-<div
-class="progress-container">
+    <!-- MATÉRIAS -->
 
-<div
-id="progress-lit"
-class="progress-bar"
-style="width:0%">
-</div>
+    <section class="card">
 
-</div>
+        <h2>
+            📊 Progresso das matérias
+        </h2>
 
-<div
-id="text-lit"
-class="progress-text">
-0%
-</div>
 
-</div>
+        <div class="subject-grid">
 
 
-<div class="subject">
+            <!-- EJA -->
 
-<div class="subject-icon">🎨</div>
+            <div class="subject">
 
-<div class="subject-title">
-Educação, corpo e arte
-</div>
+                <div class="subject-icon">
+                    📖
+                </div>
 
-<div
-class="progress-container">
 
-<div
-id="progress-art"
-class="progress-bar"
-style="width:0%">
-</div>
+                <div class="subject-title">
+                    Educação de Jovens e Adultos
+                </div>
 
-</div>
 
-<div
-id="text-art"
-class="progress-text">
-0%
-</div>
+                <div class="progress-container">
 
-</div>
+                    <div
+                        id="progress-eja"
+                        class="progress-bar"
+                        style="width:0%">
 
-</div>
+                    </div>
 
-</section>
+                </div>
 
 
-<!-- WEEKS -->
+                <div
+                    id="text-eja"
+                    class="progress-text">
 
-<section class="card">
+                    0%
 
-<h2>🗓️ Semanas</h2>
+                </div>
 
-<div
-id="weekButtons"
-class="week-grid">
-</div>
+            </div>
 
-</section>
 
+            <!-- LITERATURA -->
 
-<!-- WEEK DETAILS -->
+            <div class="subject">
 
-<section
-id="weekDetails"
-class="card">
+                <div class="subject-icon">
+                    📚
+                </div>
 
-</section>
 
+                <div class="subject-title">
+                    Literatura infantojuvenil
+                </div>
 
-<!-- EXAMS -->
 
-<section class="card">
+                <div class="progress-container">
 
-<h2>📝 Avaliações</h2>
+                    <div
+                        id="progress-lit"
+                        class="progress-bar"
+                        style="width:0%">
 
-<div id="exams"></div>
+                    </div>
 
-</section>
+                </div>
 
 
-<!-- TIMER -->
+                <div
+                    id="text-lit"
+                    class="progress-text">
 
-<section class="card timer">
+                    0%
 
-<h2>⏱️ Foco de estudo</h2>
+                </div>
 
-<p>
-Use o timer para fazer seu momento de estudo.
-</p>
+            </div>
 
-<div
-id="timerDisplay"
-class="timer-display">
-60:00
-</div>
 
-<button onclick="startTimer()">
-▶️ Iniciar
-</button>
+            <!-- ARTE -->
 
-<button onclick="pauseTimer()">
-⏸️ Pausar
-</button>
+            <div class="subject">
 
-<button onclick="resetTimer()">
-🔄 Reiniciar
-</button>
+                <div class="subject-icon">
+                    🎨
+                </div>
 
-</section>
+
+                <div class="subject-title">
+                    Educação, corpo e arte
+                </div>
+
+
+                <div class="progress-container">
+
+                    <div
+                        id="progress-art"
+                        class="progress-bar"
+                        style="width:0%">
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="text-art"
+                    class="progress-text">
+
+                    0%
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEMANAS -->
+
+    <section class="card">
+
+        <h2>
+            🗓️ Semanas
+        </h2>
+
+
+        <div
+            id="weekButtons"
+            class="week-grid">
+
+        </div>
+
+    </section>
+
+
+    <!-- DETALHES DA SEMANA -->
+
+    <section
+        id="weekDetails"
+        class="card">
+
+    </section>
+
+
+    <!-- AVALIAÇÕES -->
+
+    <section class="card">
+
+        <h2>
+            📝 Avaliações
+        </h2>
+
+
+        <div id="exams"></div>
+
+    </section>
+
+
+    <!-- TIMER -->
+
+    <section class="card timer">
+
+        <h2>
+            ⏱️ Foco de estudo
+        </h2>
+
+
+        <p>
+
+            Use o timer para fazer seu momento
+            de estudo.
+
+        </p>
+
+
+        <div
+            id="timerDisplay"
+            class="timer-display">
+
+            60:00
+
+        </div>
+
+
+        <button onclick="startTimer()">
+
+            ▶️ Iniciar
+
+        </button>
+
+
+        <button onclick="pauseTimer()">
+
+            ⏸️ Pausar
+
+        </button>
+
+
+        <button onclick="resetTimer()">
+
+            🔄 Reiniciar
+
+        </button>
+
+    </section>
 
 
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-Feito com 💜 para a Sarah estudar sem enlouquecer com a UNIVESP 😂
+    Feito com 💜 para a Sarah estudar
+    sem enlouquecer com a UNIVESP 😂
 
 </footer>
 
@@ -1924,7 +1482,7 @@ Feito com 💜 para a Sarah estudar sem enlouquecer com a UNIVESP 😂
 
 
 /* =========================
-   DADOS
+   DADOS DAS MATÉRIAS
 ========================= */
 
 const subjects = {
@@ -1957,6 +1515,7 @@ const subjects = {
 
     },
 
+
     lit: {
 
         name:
@@ -1984,6 +1543,7 @@ const subjects = {
         ]
 
     },
+
 
     art: {
 
@@ -2015,6 +1575,10 @@ const subjects = {
 
 };
 
+
+/* =========================
+   AVALIAÇÕES
+========================= */
 
 const exams = [
 
@@ -2088,7 +1652,7 @@ JSON.parse(
 
 
 /* =========================
-   DATA
+   SALVAR DADOS
 ========================= */
 
 function saveData() {
@@ -2098,10 +1662,12 @@ function saveData() {
         JSON.stringify(progress)
     );
 
+
     localStorage.setItem(
         "minhaFaculdadeNotes",
         JSON.stringify(notes)
     );
+
 
     localStorage.setItem(
         "minhaFaculdadeStudyDays",
@@ -2112,7 +1678,116 @@ function saveData() {
 
 
 /* =========================
-   GREETING
+   TEMA
+========================= */
+
+let currentTheme =
+    localStorage.getItem(
+        "minhaFaculdadeTheme"
+    ) || "auto";
+
+
+function applyTheme() {
+
+    let theme =
+        currentTheme;
+
+
+    if(theme === "auto") {
+
+        const hour =
+            new Date().getHours();
+
+
+        if(
+            hour >= 18 ||
+            hour < 6
+        ) {
+
+            theme = "dark";
+
+        } else {
+
+            theme = "light";
+
+        }
+
+    }
+
+
+    if(theme === "dark") {
+
+        document.body.classList.add(
+            "dark"
+        );
+
+    } else {
+
+        document.body.classList.remove(
+            "dark"
+        );
+
+    }
+
+
+    updateThemeButtons();
+
+}
+
+
+function setTheme(theme) {
+
+    currentTheme =
+        theme;
+
+
+    localStorage.setItem(
+        "minhaFaculdadeTheme",
+        theme
+    );
+
+
+    applyTheme();
+
+}
+
+
+function updateThemeButtons() {
+
+    document
+        .querySelectorAll(
+            ".theme-button"
+        )
+        .forEach(
+            button => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    const activeButton =
+        document.getElementById(
+            `theme-${currentTheme}`
+        );
+
+
+    if(activeButton) {
+
+        activeButton.classList.add(
+            "active"
+        );
+
+    }
+
+}
+
+
+/* =========================
+   SAUDAÇÃO
 ========================= */
 
 function setGreeting() {
@@ -2120,34 +1795,44 @@ function setGreeting() {
     const hour =
         new Date().getHours();
 
+
     let greeting;
+
 
     if(hour < 12) {
 
         greeting =
         "Bom dia, Sarah! ☀️💜";
 
-    } else if(hour < 18) {
+    }
+
+    else if(hour < 18) {
 
         greeting =
         "Boa tarde, Sarah! 🌷💜";
 
-    } else {
+    }
+
+    else {
 
         greeting =
         "Boa noite, Sarah! 🌙💜";
 
     }
 
+
     document
-        .getElementById("greeting")
-        .textContent = greeting;
+        .getElementById(
+            "greeting"
+        )
+        .textContent =
+        greeting;
 
 }
 
 
 /* =========================
-   PROGRESS KEY
+   CHAVE DE PROGRESSO
 ========================= */
 
 function getKey(
@@ -2167,7 +1852,11 @@ function isComplete(
 ) {
 
     const key =
-        getKey(week, subject);
+        getKey(
+            week,
+            subject
+        );
+
 
     return !!(
         progress[key] &&
@@ -2185,7 +1874,11 @@ function setComplete(
 ) {
 
     const key =
-        getKey(week, subject);
+        getKey(
+            week,
+            subject
+        );
+
 
     if(!progress[key]) {
 
@@ -2193,12 +1886,20 @@ function setComplete(
 
     }
 
+
     progress[key][task] =
         value;
 
+
     saveData();
 
-    registerStudyDay();
+
+    if(value) {
+
+        registerStudyDay();
+
+    }
+
 
     renderAll();
 
@@ -2206,7 +1907,7 @@ function setComplete(
 
 
 /* =========================
-   STUDY DAY
+   DIA DE ESTUDO
 ========================= */
 
 function registerStudyDay() {
@@ -2215,6 +1916,7 @@ function registerStudyDay() {
         new Date()
         .toISOString()
         .split("T")[0];
+
 
     if(
         !studyDays.includes(today)
@@ -2231,11 +1933,14 @@ function registerStudyDay() {
 
 function calculateStreak() {
 
-    if(studyDays.length === 0) {
+    if(
+        studyDays.length === 0
+    ) {
 
         return 0;
 
     }
+
 
     const dates =
         studyDays
@@ -2246,7 +1951,9 @@ function calculateStreak() {
             (a,b) => b-a
         );
 
+
     let streak = 1;
+
 
     for(
         let i = 0;
@@ -2257,13 +1964,13 @@ function calculateStreak() {
         const difference =
             Math.round(
                 (
-                    dates[i]
-                    -
+                    dates[i] -
                     dates[i+1]
                 )
                 /
                 (1000*60*60*24)
             );
+
 
         if(
             difference === 1
@@ -2271,7 +1978,9 @@ function calculateStreak() {
 
             streak++;
 
-        } else {
+        }
+
+        else {
 
             break;
 
@@ -2279,13 +1988,14 @@ function calculateStreak() {
 
     }
 
+
     return streak;
 
 }
 
 
 /* =========================
-   GENERAL PROGRESS
+   PROGRESSO GERAL
 ========================= */
 
 function calculateGeneralProgress() {
@@ -2294,46 +2004,57 @@ function calculateGeneralProgress() {
 
     let done = 0;
 
-    Object.keys(subjects)
-    .forEach(subject => {
 
-        for(
-            let week = 1;
-            week <= 7;
-            week++
-        ) {
+    Object.keys(subjects)
+    .forEach(
+        subject => {
 
             for(
-                let task = 0;
-                task < 3;
-                task++
+                let week = 1;
+                week <= 7;
+                week++
             ) {
 
-                total++;
-
-                if(
-                    isComplete(
-                        week,
-                        subject,
-                        task
-                    )
+                for(
+                    let task = 0;
+                    task < 3;
+                    task++
                 ) {
 
-                    done++;
+                    total++;
+
+
+                    if(
+                        isComplete(
+                            week,
+                            subject,
+                            task
+                        )
+                    ) {
+
+                        done++;
+
+                    }
 
                 }
 
             }
 
         }
+    );
 
-    });
 
     return {
 
         total,
+
         done,
+
         percent:
+            total === 0
+            ?
+            0
+            :
             Math.round(
                 done / total * 100
             )
@@ -2344,7 +2065,7 @@ function calculateGeneralProgress() {
 
 
 /* =========================
-   SUBJECT PROGRESS
+   PROGRESSO DA MATÉRIA
 ========================= */
 
 function calculateSubjectProgress(
@@ -2353,7 +2074,8 @@ function calculateSubjectProgress(
 
     let done = 0;
 
-    let total = 21;
+    const total = 21;
+
 
     for(
         let week = 1;
@@ -2383,6 +2105,7 @@ function calculateSubjectProgress(
 
     }
 
+
     return Math.round(
         done / total * 100
     );
@@ -2391,7 +2114,7 @@ function calculateSubjectProgress(
 
 
 /* =========================
-   WEEK PROGRESS
+   PROGRESSO DA SEMANA
 ========================= */
 
 function weekProgress(
@@ -2399,6 +2122,7 @@ function weekProgress(
 ) {
 
     let done = 0;
+
 
     for(
         const subject
@@ -2427,6 +2151,7 @@ function weekProgress(
 
     }
 
+
     return {
 
         done,
@@ -2442,18 +2167,19 @@ function weekProgress(
 
 
 /* =========================
-   WEEK BUTTONS
+   BOTÕES DAS SEMANAS
 ========================= */
 
 function renderWeekButtons() {
 
     const container =
-        document
-        .getElementById(
+        document.getElementById(
             "weekButtons"
         );
 
+
     container.innerHTML = "";
+
 
     for(
         let week = 1;
@@ -2466,11 +2192,16 @@ function renderWeekButtons() {
                 "button"
             );
 
+
         const data =
-            weekProgress(week);
+            weekProgress(
+                week
+            );
+
 
         button.className =
             "week-button";
+
 
         if(
             week === selectedWeek
@@ -2482,6 +2213,7 @@ function renderWeekButtons() {
 
         }
 
+
         if(
             data.percent === 100
         ) {
@@ -2492,13 +2224,15 @@ function renderWeekButtons() {
 
         }
 
+
         button.innerHTML = `
             S${week}
             <br>
             <small>
-            ${data.percent}% concluído
+                ${data.percent}% concluído
             </small>
         `;
+
 
         button.onclick = () => {
 
@@ -2508,6 +2242,7 @@ function renderWeekButtons() {
             renderAll();
 
         };
+
 
         container.appendChild(
             button
@@ -2519,7 +2254,7 @@ function renderWeekButtons() {
 
 
 /* =========================
-   NOTES
+   ANOTAÇÕES
 ========================= */
 
 function noteKey(
@@ -2558,17 +2293,21 @@ function saveNote(
             week,
             subject
         )
-    ] = value;
+    ] =
+        value;
+
 
     localStorage.setItem(
         "minhaFaculdadeNotes",
         JSON.stringify(notes)
     );
 
+
     const saved =
         document.getElementById(
             `saved-${week}-${subject}`
         );
+
 
     if(saved) {
 
@@ -2581,7 +2320,7 @@ function saveNote(
 
 
 /* =========================
-   VOICE
+   DIGITAÇÃO POR VOZ
 ========================= */
 
 const SpeechRecognition =
@@ -2590,10 +2329,6 @@ const SpeechRecognition =
 
 
 let recognition = null;
-
-let activeVoiceButton = null;
-
-let activeVoiceStatus = null;
 
 
 function startVoice(
@@ -2611,15 +2346,18 @@ function startVoice(
 
     }
 
+
     const textarea =
         document.getElementById(
             `note-${week}-${subject}`
         );
 
+
     const button =
         document.getElementById(
             `voice-${week}-${subject}`
         );
+
 
     const status =
         document.getElementById(
@@ -2643,16 +2381,10 @@ function startVoice(
         true;
 
 
-    activeVoiceButton =
-        button;
-
-    activeVoiceStatus =
-        status;
-
-
     button.classList.add(
         "recording"
     );
+
 
     button.textContent =
         "⏹️ Parar de ouvir";
@@ -2677,7 +2409,7 @@ function startVoice(
                     event.resultIndex;
 
                 i <
-                    event.results.length;
+                event.results.length;
 
                 i++
             ) {
@@ -2697,7 +2429,9 @@ function startVoice(
                     finalText +=
                         transcript + " ";
 
-                } else {
+                }
+
+                else {
 
                     interimText +=
                         transcript;
@@ -2710,8 +2444,7 @@ function startVoice(
             if(finalText) {
 
                 const current =
-                    textarea.value
-                    .trim();
+                    textarea.value.trim();
 
 
                 textarea.value =
@@ -2739,7 +2472,9 @@ function startVoice(
                     "🔴 " +
                     interimText;
 
-            } else {
+            }
+
+            else {
 
                 status.textContent =
                     "🔴 Ouvindo...";
@@ -2757,6 +2492,7 @@ function startVoice(
                 event.error
             );
 
+
             status.textContent =
                 "⚠️ Não consegui entender. Tente novamente.";
 
@@ -2770,11 +2506,14 @@ function startVoice(
                 "recording"
             );
 
+
             button.textContent =
                 "🎙️ Falar";
 
+
             status.textContent =
                 "Pronto para ouvir";
+
 
             recognition =
                 null;
@@ -2793,7 +2532,8 @@ function stopVoice() {
 
         recognition.stop();
 
-        recognition = null;
+        recognition =
+            null;
 
     }
 
@@ -2813,6 +2553,7 @@ function toggleVoice(
 
     }
 
+
     startVoice(
         week,
         subject
@@ -2822,14 +2563,13 @@ function toggleVoice(
 
 
 /* =========================
-   WEEK DETAILS
+   DETALHES DA SEMANA
 ========================= */
 
 function renderWeekDetails() {
 
     const container =
-        document
-        .getElementById(
+        document.getElementById(
             "weekDetails"
         );
 
@@ -2860,22 +2600,28 @@ function renderWeekDetails() {
 
             html += `
 
-            <div
-                class="subject-section">
+            <div class="subject-section">
 
                 <h3>
+
                     ${subject.icon}
                     ${subject.name}
+
                 </h3>
 
+
                 <p class="topic">
+
                     ${topic}
+
                 </p>
+
 
                 <label class="check">
 
                     <input
                         type="checkbox"
+
                         ${
                             isComplete(
                                 selectedWeek,
@@ -2907,6 +2653,7 @@ function renderWeekDetails() {
 
                     <input
                         type="checkbox"
+
                         ${
                             isComplete(
                                 selectedWeek,
@@ -2938,6 +2685,7 @@ function renderWeekDetails() {
 
                     <input
                         type="checkbox"
+
                         ${
                             isComplete(
                                 selectedWeek,
@@ -2967,18 +2715,19 @@ function renderWeekDetails() {
 
                 <!-- ANOTAÇÕES -->
 
-                <div
-                    class="notes-area">
+                <div class="notes-area">
 
-                    <div
-                        class="notes-header">
+
+                    <div class="notes-header">
 
                         <strong>
                             📝 Minhas anotações
                         </strong>
 
+
                         <button
                             class="clear-button"
+
                             onclick="
                                 clearNote(
                                     ${selectedWeek},
@@ -2986,7 +2735,9 @@ function renderWeekDetails() {
                                 )
                             "
                         >
+
                             🗑️ Limpar
+
                         </button>
 
                     </div>
@@ -2994,7 +2745,9 @@ function renderWeekDetails() {
 
                     <textarea
                         id="note-${selectedWeek}-${id}"
+
                         placeholder="Escreva suas anotações aqui... ou use o botão 🎙️ para falar."
+
                         oninput="
                             saveNote(
                                 ${selectedWeek},
@@ -3010,11 +2763,12 @@ function renderWeekDetails() {
                     )}</textarea>
 
 
-                    <div
-                        class="voice-area">
+                    <div class="voice-area">
+
 
                         <button
                             id="voice-${selectedWeek}-${id}"
+
                             class="voice-button"
 
                             onclick="
@@ -3032,7 +2786,8 @@ function renderWeekDetails() {
 
                         <span
                             id="voice-status-${selectedWeek}-${id}"
-                            class="voice-status">
+                            class="voice-status"
+                        >
 
                             Pronto para ouvir
 
@@ -3043,7 +2798,8 @@ function renderWeekDetails() {
 
                     <div
                         id="saved-${selectedWeek}-${id}"
-                        class="saved">
+                        class="saved"
+                    >
 
                         💾 Salvo automaticamente
 
@@ -3071,19 +2827,23 @@ function renderWeekDetails() {
             style="
                 margin-top:25px;
                 padding-top:20px;
-                border-top:1px solid #eee;
+                border-top:1px solid var(--border);
             "
         >
 
             <strong>
+
                 Progresso da semana:
                 ${week.done}/9 atividades
+
             </strong>
+
 
             <div class="progress-container">
 
                 <div
                     class="progress-bar"
+
                     style="
                         width:${week.percent}%
                     "
@@ -3103,7 +2863,7 @@ function renderWeekDetails() {
 
 
 /* =========================
-   CLEAR NOTE
+   LIMPAR ANOTAÇÃO
 ========================= */
 
 function clearNote(
@@ -3142,7 +2902,7 @@ function clearNote(
 
 
 /* =========================
-   ESCAPE HTML
+   ESCAPAR HTML
 ========================= */
 
 function escapeHTML(
@@ -3180,13 +2940,14 @@ function escapeHTML(
 
 
 /* =========================
-   CURRENT WEEK
+   SEMANA ATUAL
 ========================= */
 
 function renderCurrentWeek() {
 
     const today =
         new Date();
+
 
     let current =
         7;
@@ -3204,7 +2965,7 @@ function renderCurrentWeek() {
         const date =
             new Date(
                 Number(parts[2]),
-                Number(parts[1])-1,
+                Number(parts[1]) - 1,
                 Number(parts[0])
             );
 
@@ -3223,18 +2984,22 @@ function renderCurrentWeek() {
     }
 
 
+    const nextExam =
+        exams[current - 1];
+
+
     document
         .getElementById(
             "currentWeekText"
         )
         .textContent =
-        `Estamos trabalhando na Semana ${current}. Próxima avaliação: S${current} em ${exams[current-1].date}.`;
+        `Estamos trabalhando na Semana ${current}. Próxima avaliação: S${current} em ${nextExam.date}.`;
 
 }
 
 
 /* =========================
-   GENERAL UI
+   PROGRESSO GERAL
 ========================= */
 
 function renderGeneralProgress() {
@@ -3260,6 +3025,10 @@ function renderGeneralProgress() {
 
 }
 
+
+/* =========================
+   PROGRESSO DAS MATÉRIAS
+========================= */
 
 function renderSubjects() {
 
@@ -3308,6 +3077,10 @@ function renderSubjects() {
 }
 
 
+/* =========================
+   SEQUÊNCIA
+========================= */
+
 function renderStreak() {
 
     const streak =
@@ -3329,19 +3102,19 @@ function renderStreak() {
 
 
 /* =========================
-   EXAMS
+   AVALIAÇÕES
 ========================= */
 
 function renderExams() {
 
     const container =
-        document
-        .getElementById(
+        document.getElementById(
             "exams"
         );
 
 
-    container.innerHTML = "";
+    container.innerHTML =
+        "";
 
 
     exams.forEach(
@@ -3372,8 +3145,7 @@ function renderExams() {
                 </div>
 
 
-                <div
-                    class="exam-date">
+                <div class="exam-date">
 
                     ${exam.date}
 
@@ -3399,6 +3171,7 @@ function renderExams() {
 let timerSeconds =
     60 * 60;
 
+
 let timerInterval =
     null;
 
@@ -3409,6 +3182,7 @@ function updateTimer() {
         Math.floor(
             timerSeconds / 60
         );
+
 
     const seconds =
         timerSeconds % 60;
@@ -3445,12 +3219,15 @@ function startTimer() {
                         timerInterval
                     );
 
+
                     timerInterval =
                         null;
+
 
                     alert(
                         "🎉 Tempo de estudo concluído!"
                     );
+
 
                     return;
 
@@ -3464,7 +3241,6 @@ function startTimer() {
             },
 
             1000
-
         );
 
 }
@@ -3476,6 +3252,7 @@ function pauseTimer() {
         timerInterval
     );
 
+
     timerInterval =
         null;
 
@@ -3486,8 +3263,10 @@ function resetTimer() {
 
     pauseTimer();
 
+
     timerSeconds =
         60 * 60;
+
 
     updateTimer();
 
@@ -3495,7 +3274,7 @@ function resetTimer() {
 
 
 /* =========================
-   RENDER ALL
+   RENDERIZA TUDO
 ========================= */
 
 function renderAll() {
@@ -3520,12 +3299,39 @@ function renderAll() {
 
 
 /* =========================
-   START
+   INICIALIZAÇÃO
 ========================= */
+
+applyTheme();
 
 setGreeting();
 
 renderAll();
+
+
+/* =========================
+   ATUALIZAÇÃO DO TEMA AUTOMÁTICO
+========================= */
+
+/*
+   Se estiver no modo automático,
+   verifica o horário a cada minuto.
+*/
+
+setInterval(
+    () => {
+
+        if(
+            currentTheme === "auto"
+        ) {
+
+            applyTheme();
+
+        }
+
+    },
+    60000
+);
 
 
 /* =========================
@@ -3566,6 +3372,7 @@ if(
 }
 
 </script>
+
 
 </body>
 
