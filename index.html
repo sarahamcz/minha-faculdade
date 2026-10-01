@@ -9,7 +9,7 @@
 content="width=device-width, initial-scale=1.0">
 
 <meta name="theme-color"
-content="#7c5a8c">
+content="#8b6a98">
 
 <link rel="manifest"
 href="./manifest.json">
@@ -29,100 +29,110 @@ href="./manifest.json">
 
 /* =========================
    CORES — MODO CLARO
+   CREME ACONCHEGANTE
 ========================= */
 
 :root {
 
-    --bg: #f8f4f7;
+    --bg: #ebe3d5;
 
-    --bg-soft: #f2eaf4;
+    --bg-soft: #e2d8c8;
 
-    --card: #fffdfd;
+    --card: #f2ebdf;
 
-    --card-soft: #faf5fb;
+    --card-soft: #eee5d7;
 
-    --primary: #8b6a98;
+    --primary: #80618c;
 
-    --primary-dark: #70527e;
+    --primary-dark: #684b75;
 
-    --primary-light: #c9add4;
+    --primary-light: #bda4c7;
 
-    --text: #392d3e;
+    --text: #403640;
 
-    --text-soft: #76677a;
+    --text-soft: #756b73;
 
-    --border: #eadfeb;
+    --border: #d8cbbb;
 
-    --green: #b8d8bd;
+    --green: #b8c9a9;
 
-    --green-dark: #52775a;
+    --green-dark: #53664d;
 
-    --pink: #e9bfd0;
+    --pink: #d9aebd;
 
-    --yellow: #ead9a5;
+    --yellow: #dcc98d;
 
-    --blue: #bfd6e5;
+    --blue: #afc3cd;
 
-    --shadow: rgba(83, 61, 91, .09);
+    --shadow: rgba(74, 58, 67, .12);
 
-    --header-start: #8b6a98;
+    --header-start: #80618c;
 
-    --header-end: #aa89b6;
+    --header-end: #9a7aa4;
 
-    --progress-start: #8b6a98;
+    --progress-start: #80618c;
 
-    --progress-end: #c8a6d4;
+    --progress-end: #b99bc4;
 
-    --transition: .3s ease;
+    --focus-ring: rgba(128,97,140,.18);
+
+    --header-text: #fffaf5;
+
+    --transition: .45s ease;
 
 }
 
 
 /* =========================
    CORES — MODO ESCURO
+   AMEIXA ACONCHEGANTE
 ========================= */
 
 body.dark {
 
-    --bg: #17121d;
+    --bg: #211923;
 
-    --bg-soft: #211829;
+    --bg-soft: #2b202d;
 
-    --card: #251b2e;
+    --card: #302432;
 
-    --card-soft: #2b2035;
+    --card-soft: #382a3b;
 
-    --primary: #b99ac7;
+    --primary: #b79ac4;
 
-    --primary-dark: #9f7db0;
+    --primary-dark: #9d7fac;
 
-    --primary-light: #d7c2df;
+    --primary-light: #d3bedb;
 
-    --text: #f4edf7;
+    --text: #f1e8ee;
 
-    --text-soft: #c6b7cc;
+    --text-soft: #c5b6c0;
 
-    --border: #45354e;
+    --border: #4a394d;
 
-    --green: #a9cdb0;
+    --green: #9fb89e;
 
-    --green-dark: #b9dbbf;
+    --green-dark: #c0d5bb;
 
-    --pink: #e5b8ca;
+    --pink: #d9a8bb;
 
-    --yellow: #e8d59d;
+    --yellow: #d7c184;
 
-    --blue: #b8d3e5;
+    --blue: #a8c1ce;
 
-    --shadow: rgba(0, 0, 0, .28);
+    --shadow: rgba(0, 0, 0, .24);
 
-    --header-start: #24172f;
+    --header-start: #2a1d32;
 
-    --header-end: #3c2450;
+    --header-end: #493151;
 
-    --progress-start: #a486b4;
+    --progress-start: #a88ab5;
 
-    --progress-end: #d0b5da;
+    --progress-end: #cdb1d5;
+
+    --focus-ring: rgba(183,154,196,.20);
+
+    --header-text: #fff7f2;
 
 }
 
@@ -130,6 +140,14 @@ body.dark {
 /* =========================
    BODY
 ========================= */
+
+html {
+
+    background:
+        var(--bg);
+
+}
+
 
 body {
 
@@ -147,11 +165,36 @@ body {
             var(--bg-soft)
         );
 
-    color: var(--text);
+    color:
+        var(--text);
 
     transition:
         background var(--transition),
         color var(--transition);
+
+}
+
+
+/* =========================
+   TRANSIÇÃO DOS ELEMENTOS
+========================= */
+
+header,
+.card,
+.subject,
+.week-button,
+.exam,
+textarea,
+.progress-container,
+.timer button,
+.clear-button {
+
+    transition:
+        background-color var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 
 }
 
@@ -169,9 +212,11 @@ header {
             var(--header-end)
         );
 
-    color: white;
+    color:
+        var(--header-text);
 
-    padding: 28px 20px;
+    padding:
+        28px 20px;
 
     border-radius:
         0 0 30px 30px;
@@ -180,18 +225,19 @@ header {
         0 8px 25px
         var(--shadow);
 
-    transition:
-        background var(--transition);
-
 }
+
 
 .header-content {
 
-    max-width: 1000px;
+    max-width:
+        1000px;
 
-    margin: auto;
+    margin:
+        auto;
 
 }
+
 
 h1 {
 
@@ -203,11 +249,14 @@ h1 {
 
 }
 
+
 .subtitle {
 
-    opacity: .9;
+    opacity:
+        .9;
 
-    margin: 0;
+    margin:
+        0;
 
 }
 
@@ -224,7 +273,8 @@ h1 {
     justify-content:
         center;
 
-    gap: 8px;
+    gap:
+        8px;
 
     flex-wrap:
         wrap;
@@ -233,6 +283,7 @@ h1 {
         18px 0 4px;
 
 }
+
 
 .theme-button {
 
@@ -259,12 +310,13 @@ h1 {
         bold;
 
     transition:
-        all var(--transition);
+        all .3s ease;
 
     backdrop-filter:
         blur(5px);
 
 }
+
 
 .theme-button:hover {
 
@@ -276,16 +328,17 @@ h1 {
 
 }
 
+
 .theme-button.active {
 
     background:
-        white;
+        #fffaf5;
 
     color:
         var(--primary-dark);
 
     border-color:
-        white;
+        #fffaf5;
 
 }
 
@@ -334,12 +387,8 @@ h1 {
         1px solid
         var(--border);
 
-    transition:
-        background var(--transition),
-        border-color var(--transition),
-        box-shadow var(--transition);
-
 }
+
 
 .card h2 {
 
@@ -348,12 +397,14 @@ h1 {
 
 }
 
+
 .hero {
 
     margin-top:
         -10px;
 
 }
+
 
 .hero-title {
 
@@ -364,6 +415,7 @@ h1 {
         bold;
 
 }
+
 
 .hero-subtitle {
 
@@ -396,6 +448,7 @@ h1 {
 
 }
 
+
 .progress-bar {
 
     height:
@@ -412,9 +465,11 @@ h1 {
         20px;
 
     transition:
-        width .4s ease;
+        width .4s ease,
+        background var(--transition);
 
 }
+
 
 .progress-text {
 
@@ -450,6 +505,7 @@ h1 {
 
 }
 
+
 .subject {
 
     border:
@@ -465,10 +521,8 @@ h1 {
     background:
         var(--card-soft);
 
-    transition:
-        all var(--transition);
-
 }
+
 
 .subject:hover {
 
@@ -476,6 +530,7 @@ h1 {
         translateY(-2px);
 
 }
+
 
 .subject-title {
 
@@ -486,6 +541,7 @@ h1 {
         8px;
 
 }
+
 
 .subject-icon {
 
@@ -515,6 +571,7 @@ h1 {
 
 }
 
+
 .week-button {
 
     border:
@@ -539,10 +596,8 @@ h1 {
     font-weight:
         bold;
 
-    transition:
-        all var(--transition);
-
 }
+
 
 .week-button:hover {
 
@@ -550,6 +605,7 @@ h1 {
         translateY(-2px);
 
 }
+
 
 .week-button.active {
 
@@ -563,6 +619,7 @@ h1 {
         var(--primary);
 
 }
+
 
 .week-button.completed {
 
@@ -593,6 +650,7 @@ h1 {
 
 }
 
+
 .subject-section:first-child {
 
     border-top:
@@ -602,6 +660,7 @@ h1 {
         0;
 
 }
+
 
 .topic {
 
@@ -637,6 +696,7 @@ h1 {
 
 }
 
+
 .check input {
 
     width:
@@ -662,6 +722,7 @@ h1 {
 
 }
 
+
 .notes-header {
 
     display:
@@ -680,6 +741,7 @@ h1 {
         wrap;
 
 }
+
 
 textarea {
 
@@ -717,13 +779,22 @@ textarea {
     background:
         var(--card-soft);
 
-    transition:
-        all var(--transition);
-
     margin-top:
         12px;
 
 }
+
+
+textarea::placeholder {
+
+    color:
+        var(--text-soft);
+
+    opacity:
+        .75;
+
+}
+
 
 textarea:focus {
 
@@ -732,7 +803,7 @@ textarea:focus {
 
     box-shadow:
         0 0 0 3px
-        rgba(139,106,152,.12);
+        var(--focus-ring);
 
 }
 
@@ -761,10 +832,8 @@ textarea:focus {
     cursor:
         pointer;
 
-    transition:
-        all var(--transition);
-
 }
+
 
 .clear-button:hover {
 
@@ -784,6 +853,7 @@ textarea:focus {
         12px;
 
 }
+
 
 .voice-button {
 
@@ -808,10 +878,8 @@ textarea:focus {
     font-weight:
         bold;
 
-    transition:
-        all var(--transition);
-
 }
+
 
 .voice-button:hover {
 
@@ -823,15 +891,17 @@ textarea:focus {
 
 }
 
+
 .voice-button.recording {
 
     background:
-        #c65d73;
+        #bd6579;
 
     animation:
         pulse 1.3s infinite;
 
 }
+
 
 .voice-status {
 
@@ -849,6 +919,7 @@ textarea:focus {
 
 }
 
+
 .saved {
 
     font-size:
@@ -862,13 +933,14 @@ textarea:focus {
 
 }
 
+
 @keyframes pulse {
 
     0% {
 
         box-shadow:
             0 0 0 0
-            rgba(198,93,115,.5);
+            rgba(189,101,121,.5);
 
     }
 
@@ -876,7 +948,7 @@ textarea:focus {
 
         box-shadow:
             0 0 0 10px
-            rgba(198,93,115,0);
+            rgba(189,101,121,0);
 
     }
 
@@ -884,7 +956,7 @@ textarea:focus {
 
         box-shadow:
             0 0 0 0
-            rgba(198,93,115,0);
+            rgba(189,101,121,0);
 
     }
 
@@ -927,6 +999,7 @@ textarea:focus {
 
 }
 
+
 .exam-date {
 
     font-weight:
@@ -964,6 +1037,7 @@ textarea:focus {
 
 }
 
+
 .timer-display {
 
     font-size:
@@ -979,6 +1053,7 @@ textarea:focus {
         15px 0;
 
 }
+
 
 .timer button {
 
@@ -1006,10 +1081,8 @@ textarea:focus {
     font-weight:
         bold;
 
-    transition:
-        all var(--transition);
-
 }
+
 
 .timer button:hover {
 
@@ -1467,7 +1540,7 @@ footer {
 
 
 <!-- =========================
-     FOOTER
+   FOOTER
 ========================= -->
 
 <footer>
