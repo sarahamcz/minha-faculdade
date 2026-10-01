@@ -1,536 +1,621 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#7c5a8c">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>📚 Minha Faculdade — UNIVESP</title>
+<meta name="theme-color"
+content="#7c5a8c">
+
+<link rel="manifest"
+href="./manifest.json">
+
+<title>Minha Faculdade — UNIVESP</title>
 
 <style>
-
-:root {
-    --roxo: #7c5a8c;
-    --roxo-escuro: #60436f;
-    --roxo-claro: #eee5f2;
-    --fundo: #f7f3f8;
-    --branco: #ffffff;
-    --texto: #3f3545;
-    --texto-claro: #74697b;
-    --verde: #69a66d;
-    --amarelo: #e7b84b;
-    --borda: #e5dce8;
-    --sombra: 0 4px 15px rgba(70, 45, 80, 0.08);
-}
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--fundo);
-    color: var(--texto);
-}
 
-button {
-    font-family: inherit;
-}
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-.container {
-    width: min(1100px, 94%);
-    margin: auto;
-}
+    background:
+        linear-gradient(
+            135deg,
+            #f7f3f8,
+            #eee5f3
+        );
 
-/* =========================
-   CABEÇALHO
-========================= */
+    color: #34263b;
+
+}
 
 header {
-    background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c5a8c,
+            #9b77ad
+        );
+
     color: white;
-    padding: 24px 0;
-    box-shadow: var(--sombra);
+
+    padding: 28px 20px;
+
+    border-radius:
+        0 0 28px 28px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(80,50,90,.18);
+
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+
+    max-width: 1000px;
+
+    margin: auto;
+
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
+h1 {
+
+    margin: 0 0 8px;
+
+    font-size: 28px;
+
 }
 
-.date {
-    font-size: 14px;
-    opacity: 0.9;
+.subtitle {
+
+    opacity: .9;
+
+    margin: 0;
+
 }
 
-/* =========================
-   HERO / HOJE
-========================= */
+.container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
+.card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(60,40,70,.08);
+
+}
+
+.card h2 {
+
+    margin-top: 0;
+
+}
 
 .hero {
-    margin-top: 25px;
-    background: var(--branco);
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: var(--sombra);
+
+    margin-top: -10px;
+
 }
 
-.hero h1 {
-    margin: 0 0 8px;
-    font-size: 30px;
-}
+.hero-title {
 
-.hero p {
-    margin: 5px 0;
-    color: var(--texto-claro);
-}
+    font-size: 25px;
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 18px;
-    margin-top: 22px;
-}
-
-.hero-box {
-    background: var(--roxo-claro);
-    border-radius: 15px;
-    padding: 18px;
-}
-
-.hero-box strong {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 7px;
-}
-
-.hero-box span {
-    color: var(--texto-claro);
-    font-size: 14px;
-}
-
-/* =========================
-   CARDS DE PROGRESSO
-========================= */
-
-.section-title {
-    margin: 32px 0 15px;
-    font-size: 22px;
-}
-
-.progress-general {
-    background: var(--branco);
-    padding: 22px;
-    border-radius: 18px;
-    box-shadow: var(--sombra);
-}
-
-.general-number {
-    font-size: 32px;
     font-weight: bold;
-    color: var(--roxo);
+
+}
+
+.hero-subtitle {
+
+    color: #705d78;
+
+}
+
+.progress-container {
+
+    background: #eee8f1;
+
+    border-radius: 20px;
+
+    height: 14px;
+
+    overflow: hidden;
+
+    margin-top: 12px;
+
 }
 
 .progress-bar {
-    width: 100%;
-    height: 11px;
-    background: #eee8f0;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c5a8c,
+            #b58ac8
+        );
+
     border-radius: 20px;
-    overflow: hidden;
-    margin-top: 10px;
+
+    transition: width .4s ease;
+
 }
 
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--roxo), #a982b7);
-    border-radius: 20px;
-    transition: width 0.3s ease;
+.progress-text {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #705d78;
+
 }
 
 .subject-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
     gap: 15px;
+
 }
 
-.subject-card {
-    background: var(--branco);
-    padding: 20px;
+.subject {
+
+    border: 2px solid #eee6f1;
+
     border-radius: 18px;
-    box-shadow: var(--sombra);
-}
 
-.subject-card h3 {
-    margin-top: 0;
-    font-size: 17px;
-}
-
-.subject-card p {
-    color: var(--texto-claro);
-    font-size: 13px;
-    min-height: 32px;
-}
-
-.subject-percent {
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--roxo);
-}
-
-/* =========================
-   SEQUÊNCIA
-========================= */
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.stat-card {
-    background: var(--branco);
-    padding: 20px;
-    border-radius: 18px;
-    box-shadow: var(--sombra);
-}
-
-.stat-icon {
-    font-size: 30px;
-}
-
-.stat-value {
-    font-size: 27px;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-.stat-label {
-    color: var(--texto-claro);
-    font-size: 13px;
-}
-
-/* =========================
-   ALERTA
-========================= */
-
-.alert {
-    margin-top: 25px;
     padding: 18px;
-    background: #fff7dc;
-    border-left: 5px solid var(--amarelo);
-    border-radius: 12px;
-    color: #66501b;
+
 }
 
-/* =========================
-   SEMANAS
-========================= */
+.subject-title {
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+.subject-icon {
+
+    font-size: 28px;
+
+}
 
 .week-grid {
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(150px, 1fr)
+        );
+
     gap: 12px;
+
 }
 
-.week-card {
-    background: var(--branco);
-    border: 2px solid transparent;
-    padding: 18px;
-    border-radius: 16px;
-    cursor: pointer;
-    box-shadow: var(--sombra);
-    transition: 0.2s;
-}
+.week-button {
 
-.week-card:hover {
-    transform: translateY(-2px);
-}
-
-.week-card.selected {
-    border-color: var(--roxo);
-}
-
-.week-card.completed {
-    border-color: var(--verde);
-}
-
-.week-title {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.week-date {
-    color: var(--texto-claro);
-    font-size: 13px;
-    margin-top: 4px;
-}
-
-.week-percent {
-    margin-top: 10px;
-    font-size: 13px;
-}
-
-.mini-bar {
-    width: 100%;
-    height: 7px;
-    background: #eee8f0;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-top: 7px;
-}
-
-.mini-fill {
-    height: 100%;
-    background: var(--roxo);
-}
-
-/* =========================
-   DETALHES
-========================= */
-
-.details {
-    margin-top: 25px;
-    background: var(--branco);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: var(--sombra);
-}
-
-.details-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.details-header h2 {
-    margin: 0;
-}
-
-.complete-btn {
     border: none;
-    background: var(--verde);
-    color: white;
-    padding: 11px 16px;
-    border-radius: 10px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: #f0e8f3;
+
+    color: #4e3b56;
+
     cursor: pointer;
+
     font-weight: bold;
+
+    transition: .2s;
+
 }
 
-.complete-btn:hover {
-    opacity: 0.9;
+.week-button:hover {
+
+    transform: translateY(-2px);
+
 }
 
-.subject-detail {
+.week-button.active {
+
+    background: #7c5a8c;
+
+    color: white;
+
+}
+
+.week-button.completed {
+
+    background: #dcefdc;
+
+    color: #315d31;
+
+}
+
+.subject-section {
+
+    border-top: 1px solid #eee;
+
+    padding-top: 20px;
+
     margin-top: 20px;
-    padding: 18px;
-    border: 1px solid var(--borda);
-    border-radius: 15px;
+
 }
 
-.subject-detail h3 {
+.subject-section:first-child {
+
+    border-top: none;
+
     margin-top: 0;
+
 }
 
-.checkbox-row {
+.topic {
+
+    color: #6c5b72;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+.check {
+
     display: flex;
+
     align-items: center;
-    gap: 9px;
-    margin: 12px 0;
-    color: var(--texto-claro);
+
+    gap: 8px;
+
+    margin: 10px 0;
+
 }
 
-.checkbox-row input {
+.check input {
+
     width: 18px;
+
     height: 18px;
-    accent-color: var(--roxo);
+
+    accent-color: #7c5a8c;
+
 }
 
-/* =========================
-   AVALIAÇÕES
-========================= */
+textarea {
 
-.exam-list {
-    display: grid;
-    gap: 12px;
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    border: 2px solid #e5dbea;
+
+    border-radius: 16px;
+
+    padding: 14px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #34263b;
+
+    outline: none;
+
+    background: #fcfaff;
+
+    transition: .2s;
+
+}
+
+textarea:focus {
+
+    border-color: #9b77ad;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(124,90,140,.1);
+
+}
+
+.notes-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+.voice-area {
+
+    margin-top: 12px;
+
+}
+
+.voice-button {
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 11px 16px;
+
+    background: #7c5a8c;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .2s;
+
+}
+
+.voice-button:hover {
+
+    transform: translateY(-1px);
+
+    background: #6c4b7b;
+
+}
+
+.voice-button.recording {
+
+    background: #c94b63;
+
+    animation: pulse 1.3s infinite;
+
+}
+
+.voice-status {
+
+    display: inline-block;
+
+    margin-left: 10px;
+
+    font-size: 13px;
+
+    color: #755f7c;
+
+}
+
+.clear-button {
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 9px 13px;
+
+    background: #f0e9f2;
+
+    color: #6a526f;
+
+    cursor: pointer;
+
+}
+
+.saved {
+
+    font-size: 12px;
+
+    color: #618061;
+
+    margin-top: 7px;
+
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(201,75,99,.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 10px
+            rgba(201,75,99,0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(201,75,99,0);
+    }
+
 }
 
 .exam {
-    background: var(--branco);
-    padding: 17px;
-    border-radius: 15px;
-    box-shadow: var(--sombra);
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    gap: 15px;
-}
 
-.exam strong {
-    display: block;
-}
+    gap: 10px;
 
-.exam span {
-    color: var(--texto-claro);
-    font-size: 13px;
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: #f8f4fa;
+
+    margin-bottom: 10px;
+
 }
 
 .exam-date {
-    color: var(--roxo);
+
     font-weight: bold;
+
+    color: #7c5a8c;
+
 }
 
-/* =========================
-   TIMER
-========================= */
+.streak {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+}
 
 .timer {
-    background: var(--branco);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: var(--sombra);
+
     text-align: center;
+
 }
 
 .timer-display {
-    font-size: 55px;
+
+    font-size: 48px;
+
     font-weight: bold;
-    color: var(--roxo);
+
+    color: #7c5a8c;
+
     margin: 15px 0;
+
 }
 
 .timer button {
+
     border: none;
-    padding: 11px 17px;
+
+    border-radius: 12px;
+
+    padding: 10px 15px;
+
     margin: 4px;
-    border-radius: 10px;
+
     cursor: pointer;
-    background: var(--roxo);
-    color: white;
+
+    background: #eee5f2;
+
+    color: #4d3955;
+
+    font-weight: bold;
+
 }
-
-.timer button:hover {
-    background: var(--roxo-escuro);
-}
-
-/* =========================
-   LINHA DO TEMPO
-========================= */
-
-.timeline {
-    background: var(--branco);
-    padding: 22px;
-    border-radius: 18px;
-    box-shadow: var(--sombra);
-}
-
-.timeline-item {
-    border-left: 3px solid var(--roxo);
-    padding: 5px 0 18px 18px;
-    margin-left: 8px;
-}
-
-.timeline-item:last-child {
-    padding-bottom: 0;
-}
-
-.timeline-item strong {
-    display: block;
-}
-
-.timeline-item span {
-    font-size: 13px;
-    color: var(--texto-claro);
-}
-
-/* =========================
-   RODAPÉ
-========================= */
 
 footer {
+
     text-align: center;
-    padding: 35px 10px;
-    color: var(--texto-claro);
+
+    padding: 30px 20px;
+
+    color: #806d87;
+
     font-size: 13px;
+
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+@media(max-width:600px) {
 
-@media (max-width: 800px) {
+    header {
 
-    .hero-grid {
-        grid-template-columns: 1fr;
+        padding: 23px 17px;
+
     }
 
-    .subject-grid {
-        grid-template-columns: 1fr;
-    }
+    h1 {
 
-    .week-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero {
-        padding: 20px;
-    }
-
-    .hero h1 {
         font-size: 24px;
+
     }
 
-    .week-grid {
-        grid-template-columns: 1fr;
+    .container {
+
+        padding: 14px;
+
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
+    .card {
 
-    .details {
-        padding: 18px;
+        padding: 16px;
+
     }
 
     .timer-display {
-        font-size: 45px;
+
+        font-size: 40px;
+
     }
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<div class="container header-content">
+<div class="header-content">
 
-<div class="logo">
-📚 Minha Faculdade
-</div>
+<h1 id="greeting">
+    Minha Faculdade 💜
+</h1>
 
-<div class="date" id="todayDate"></div>
+<p class="subtitle">
+    Meu painel pessoal de estudos — UNIVESP
+</p>
 
 </div>
 
@@ -539,70 +624,145 @@ footer {
 
 <main class="container">
 
-<!-- =========================
-     HOJE
-========================= -->
 
-<section class="hero">
+<!-- HERO -->
 
-<h1 id="greeting">Boa noite, Sarah! 💜</h1>
+<section class="card hero">
 
-<p>
-Vamos cuidar da faculdade sem transformar isso numa segunda jornada de trabalho. 😌📚
+<div class="hero-title">
+    📚 Semana atual
+</div>
+
+<p id="currentWeekText"
+class="hero-subtitle">
+    Carregando...
 </p>
 
-<div class="hero-grid">
+<div class="progress-container">
 
-<div class="hero-box">
-
-<strong id="currentWeekHero">
-📖 Semana atual
-</strong>
-
-<span id="currentWeekDescription">
-Carregando...
-</span>
+<div
+id="generalProgress"
+class="progress-bar"
+style="width:0%">
+</div>
 
 </div>
 
-<div class="hero-box">
-
-<strong>📅 Próxima avaliação</strong>
-
-<span id="nextExamHero">
-Carregando...
-</span>
-
-</div>
-
+<div
+id="generalProgressText"
+class="progress-text">
+    0% concluído
 </div>
 
 </section>
 
 
-<!-- =========================
-     PROGRESSO GERAL
-========================= -->
+<!-- STREAK -->
 
-<h2 class="section-title">
-📊 Meu progresso
-</h2>
+<section class="card">
 
-<section class="progress-general">
+<h2>🔥 Minha sequência</h2>
 
-<div>
-<span>Progresso geral das disciplinas</span>
+<div
+id="streak"
+class="streak">
+0 dias
+</div>
 
-<div class="general-number" id="generalPercent">
+<p>
+Dias consecutivos em que você marcou alguma atividade como concluída.
+</p>
+
+</section>
+
+
+<!-- SUBJECTS -->
+
+<section class="card">
+
+<h2>📊 Progresso das matérias</h2>
+
+<div class="subject-grid">
+
+<div class="subject">
+
+<div class="subject-icon">📖</div>
+
+<div class="subject-title">
+Educação de Jovens e Adultos
+</div>
+
+<div
+class="progress-container">
+
+<div
+id="progress-eja"
+class="progress-bar"
+style="width:0%">
+</div>
+
+</div>
+
+<div
+id="text-eja"
+class="progress-text">
 0%
 </div>
 
-<div class="progress-bar">
+</div>
+
+
+<div class="subject">
+
+<div class="subject-icon">📚</div>
+
+<div class="subject-title">
+Literatura infantojuvenil
+</div>
 
 <div
-class="progress-fill"
-id="generalProgress"
-style="width: 0%">
+class="progress-container">
+
+<div
+id="progress-lit"
+class="progress-bar"
+style="width:0%">
+</div>
+
+</div>
+
+<div
+id="text-lit"
+class="progress-text">
+0%
+</div>
+
+</div>
+
+
+<div class="subject">
+
+<div class="subject-icon">🎨</div>
+
+<div class="subject-title">
+Educação, corpo e arte
+</div>
+
+<div
+class="progress-container">
+
+<div
+id="progress-art"
+class="progress-bar"
+style="width:0%">
+</div>
+
+</div>
+
+<div
+id="text-art"
+class="progress-text">
+0%
 </div>
 
 </div>
@@ -612,150 +772,62 @@ style="width: 0%">
 </section>
 
 
-<div class="subject-grid" id="subjectProgress">
+<!-- WEEKS -->
 
-</div>
+<section class="card">
 
+<h2>🗓️ Semanas</h2>
 
-<!-- =========================
-     ESTATÍSTICAS
-========================= -->
-
-<h2 class="section-title">
-🔥 Minha rotina
-</h2>
-
-<div class="stats-grid">
-
-<div class="stat-card">
-
-<div class="stat-icon">🔥</div>
-
-<div class="stat-value" id="streakValue">
-0
-</div>
-
-<div class="stat-label">
-dias seguidos estudando
-</div>
-
-</div>
-
-
-<div class="stat-card">
-
-<div class="stat-icon">📚</div>
-
-<div class="stat-value" id="completedWeeks">
-0/7
-</div>
-
-<div class="stat-label">
-semanas concluídas
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     ALERTA
-========================= -->
-
-<div class="alert">
-
-<strong>⚠️ Atenção:</strong>
-
-As avaliações S6 e S7 acontecem no mesmo dia:
-
-<strong>02/11/2026.</strong>
-
-Não deixa para estudar as duas na véspera, hein? 👀
-
-</div>
-
-
-<!-- =========================
-     SEMANAS
-========================= -->
-
-<h2 class="section-title">
-🗓️ Semanas de estudo
-</h2>
-
-<div class="week-grid" id="weeksContainer">
-
-</div>
-
-
-<!-- =========================
-     DETALHES
-========================= -->
-
-<section class="details">
-
-<div class="details-header">
-
-<h2 id="detailsTitle">
-📖 Semana
-</h2>
-
-<button
-class="complete-btn"
-id="completeWeekBtn"
-onclick="toggleWeekComplete()">
-
-✅ Marcar semana como concluída
-
-</button>
-
-</div>
-
-<div id="detailsContainer">
-
+<div
+id="weekButtons"
+class="week-grid">
 </div>
 
 </section>
 
 
-<!-- =========================
-     AVALIAÇÕES
-========================= -->
+<!-- WEEK DETAILS -->
 
-<h2 class="section-title">
-📝 Avaliações
-</h2>
+<section
+id="weekDetails"
+class="card">
 
-<div class="exam-list" id="examContainer">
-
-</div>
+</section>
 
 
-<!-- =========================
-     TIMER
-========================= -->
+<!-- EXAMS -->
 
-<h2 class="section-title">
-⏱️ Foco nos estudos
-</h2>
+<section class="card">
 
-<section class="timer">
+<h2>📝 Avaliações</h2>
+
+<div id="exams"></div>
+
+</section>
+
+
+<!-- TIMER -->
+
+<section class="card timer">
+
+<h2>⏱️ Foco de estudo</h2>
 
 <p>
-Um tempinho de foco. Depois você respira. 💜
+Use o timer para fazer seu momento de estudo.
 </p>
 
-<div class="timer-display" id="timerDisplay">
+<div
+id="timerDisplay"
+class="timer-display">
 60:00
 </div>
 
 <button onclick="startTimer()">
-▶ Começar
+▶️ Iniciar
 </button>
 
 <button onclick="pauseTimer()">
-⏸ Pausar
+⏸️ Pausar
 </button>
 
 <button onclick="resetTimer()">
@@ -765,1371 +837,1663 @@ Um tempinho de foco. Depois você respira. 💜
 </section>
 
 
-<!-- =========================
-     LINHA DO TEMPO
-========================= -->
-
-<h2 class="section-title">
-📅 Linha do tempo
-</h2>
-
-<section class="timeline" id="timelineContainer">
-
-</section>
-
-
 </main>
 
 
 <footer>
 
-📚 Minha Faculdade — UNIVESP<br>
-Feito com carinho, café e um pouquinho de desespero acadêmico. ☕😂💜
+Feito com 💜 para a Sarah estudar sem enlouquecer com a UNIVESP 😂
 
 </footer>
 
 
 <script>
 
-/* =========================================================
-   DADOS DAS DISCIPLINAS
-========================================================= */
 
-const subjects = [
+/* =========================
+   DADOS
+========================= */
 
-{
-id: "eja",
-name: "Educação de Jovens e Adultos",
-short: "EJA",
-code: "SEJ001",
-topics: [
-"Compreensão do contexto da Educação de Jovens e Adultos",
-"Alfabetização e letramento para jovens e adultos",
-"Fundamentos teóricos e didáticos para a Educação de Jovens e Adultos",
-"Propostas curriculares",
-"Inovação e novas práticas pedagógicas",
-"Avaliação e acompanhamento dos alunos adultos",
-"Reflexão e formação contínua"
-]
-},
+const subjects = {
 
-{
-id: "literatura",
-name: "Literatura infantojuvenil",
-short: "Literatura",
-code: "LET510",
-topics: [
-"Abrangência e características da literatura infantojuvenil",
-"As origens e a formação da literatura infantojuvenil brasileira",
-"Prosa, teatro e quadrinho infantojuvenil brasileiros",
-"Poesia e canção infantojuvenil brasileiras",
-"Uma extensão da literatura infantojuvenil: a contação de histórias",
-"O ensino de literatura infantojuvenil",
-"Tendências contemporâneas da literatura infantojuvenil no Brasil"
-]
-},
+    eja: {
 
-{
-id: "corpo",
-name: "Educação, corpo e arte",
-short: "Corpo e Arte",
-code: "EDU510",
-topics: [
-"Vivência x Experiência: As práticas corporais como potenciais de afetação na formação de professores",
-"A construção cultural do corpo",
-"Corporalidade: a constituição do humano",
-"Concepções e constituição da Educação Física como área de conhecimento",
-"Arte e Educação Física como Área da Linguagem",
-"Estética como elemento constitutivo das práticas corporais artísticas e esportivas",
-"Poéticas Infantis"
-]
-}
+        name:
+        "Educação de Jovens e Adultos",
 
-];
+        icon:
+        "📖",
 
+        topics: [
 
-/* =========================================================
-   SEMANAS
-========================================================= */
+            "Compreensão do contexto da Educação de Jovens e Adultos",
 
-const weeks = [
+            "Alfabetização e letramento para jovens e adultos",
 
-{
-id: "S1",
-date: "28/09/2026"
-},
+            "Fundamentos teóricos e didáticos para a Educação de Jovens e Adultos",
 
-{
-id: "S2",
-date: "05/10/2026"
-},
+            "Propostas curriculares",
 
-{
-id: "S3",
-date: "12/10/2026"
-},
+            "Inovação e novas práticas pedagógicas",
 
-{
-id: "S4",
-date: "19/10/2026"
-},
+            "Avaliação e acompanhamento dos alunos adultos",
 
-{
-id: "S5",
-date: "26/10/2026"
-},
+            "Reflexão e formação contínua"
 
-{
-id: "S6",
-date: "02/11/2026"
-},
+        ]
 
-{
-id: "S7",
-date: "02/11/2026"
-}
+    },
 
-];
+    lit: {
 
+        name:
+        "Literatura infantojuvenil",
 
-/* =========================================================
-   AVALIAÇÕES
-========================================================= */
+        icon:
+        "📚",
+
+        topics: [
+
+            "Abrangência e características da literatura infantojuvenil",
+
+            "As origens e a formação da literatura infantojuvenil brasileira",
+
+            "Prosa, teatro e quadrinho infantojuvenil brasileiros",
+
+            "Poesia e canção infantojuvenil brasileiras",
+
+            "Uma extensão da literatura infantojuvenil: a contação de histórias",
+
+            "O ensino de literatura infantojuvenil",
+
+            "Tendências contemporâneas da literatura infantojuvenil no Brasil"
+
+        ]
+
+    },
+
+    art: {
+
+        name:
+        "Educação, corpo e arte",
+
+        icon:
+        "🎨",
+
+        topics: [
+
+            "Vivência x Experiência: As práticas corporais como potenciais de afetação na formação de professores",
+
+            "A construção cultural do corpo",
+
+            "Corporalidade: a constituição do humano",
+
+            "Concepções e constituição da Educação Física como área de conhecimento",
+
+            "Arte e Educação Física como Área da Linguagem",
+
+            "Estética como elemento constitutivo das práticas corporais artísticas e esportivas",
+
+            "Poéticas Infantis"
+
+        ]
+
+    }
+
+};
+
 
 const exams = [
 
-{
-id: "S1",
-date: "28/09/2026"
-},
+    {
+        week: 1,
+        date: "28/09/2026"
+    },
 
-{
-id: "S2",
-date: "05/10/2026"
-},
+    {
+        week: 2,
+        date: "05/10/2026"
+    },
 
-{
-id: "S3",
-date: "12/10/2026"
-},
+    {
+        week: 3,
+        date: "12/10/2026"
+    },
 
-{
-id: "S4",
-date: "19/10/2026"
-},
+    {
+        week: 4,
+        date: "19/10/2026"
+    },
 
-{
-id: "S5",
-date: "26/10/2026"
-},
+    {
+        week: 5,
+        date: "26/10/2026"
+    },
 
-{
-id: "S6",
-date: "02/11/2026"
-},
+    {
+        week: 6,
+        date: "02/11/2026"
+    },
 
-{
-id: "S7",
-date: "02/11/2026"
-}
+    {
+        week: 7,
+        date: "02/11/2026"
+    }
 
 ];
 
 
-/* =========================================================
-   VARIÁVEIS
-========================================================= */
-
-let selectedWeek = "S1";
-
-let timerSeconds = 60 * 60;
-
-let timerInterval = null;
+let selectedWeek = 1;
 
 
-/* =========================================================
-   LOCAL STORAGE
-========================================================= */
+/* =========================
+   STORAGE
+========================= */
 
-function saveData(key, value) {
-
-localStorage.setItem(
-"univesp_" + key,
-JSON.stringify(value)
+let progress =
+JSON.parse(
+    localStorage.getItem(
+        "minhaFaculdadeProgress"
+    ) || "{}"
 );
 
-}
 
-
-function getData(key, fallback = null) {
-
-const data = localStorage.getItem(
-"univesp_" + key
+let notes =
+JSON.parse(
+    localStorage.getItem(
+        "minhaFaculdadeNotes"
+    ) || "{}"
 );
 
-if (data === null) {
 
-return fallback;
-
-}
-
-try {
-
-return JSON.parse(data);
-
-} catch {
-
-return fallback;
-
-}
-
-}
+let studyDays =
+JSON.parse(
+    localStorage.getItem(
+        "minhaFaculdadeStudyDays"
+    ) || "[]"
+);
 
 
-/* =========================================================
-   DATA DE HOJE
-========================================================= */
+/* =========================
+   DATA
+========================= */
 
-function getTodayKey() {
+function saveData() {
 
-const today = new Date();
+    localStorage.setItem(
+        "minhaFaculdadeProgress",
+        JSON.stringify(progress)
+    );
 
-return today.getFullYear() +
-"-" +
-String(today.getMonth() + 1).padStart(2, "0") +
-"-" +
-String(today.getDate()).padStart(2, "0");
+    localStorage.setItem(
+        "minhaFaculdadeNotes",
+        JSON.stringify(notes)
+    );
+
+    localStorage.setItem(
+        "minhaFaculdadeStudyDays",
+        JSON.stringify(studyDays)
+    );
 
 }
 
 
-/* =========================================================
-   REGISTRAR DIA DE ESTUDO
-========================================================= */
+/* =========================
+   GREETING
+========================= */
+
+function setGreeting() {
+
+    const hour =
+        new Date().getHours();
+
+    let greeting;
+
+    if(hour < 12) {
+
+        greeting =
+        "Bom dia, Sarah! ☀️💜";
+
+    } else if(hour < 18) {
+
+        greeting =
+        "Boa tarde, Sarah! 🌷💜";
+
+    } else {
+
+        greeting =
+        "Boa noite, Sarah! 🌙💜";
+
+    }
+
+    document
+        .getElementById("greeting")
+        .textContent = greeting;
+
+}
+
+
+/* =========================
+   PROGRESS KEY
+========================= */
+
+function getKey(
+    week,
+    subject
+) {
+
+    return `${week}-${subject}`;
+
+}
+
+
+function isComplete(
+    week,
+    subject,
+    task
+) {
+
+    const key =
+        getKey(week, subject);
+
+    return !!(
+        progress[key] &&
+        progress[key][task]
+    );
+
+}
+
+
+function setComplete(
+    week,
+    subject,
+    task,
+    value
+) {
+
+    const key =
+        getKey(week, subject);
+
+    if(!progress[key]) {
+
+        progress[key] = {};
+
+    }
+
+    progress[key][task] =
+        value;
+
+    saveData();
+
+    registerStudyDay();
+
+    renderAll();
+
+}
+
+
+/* =========================
+   STUDY DAY
+========================= */
 
 function registerStudyDay() {
 
-let studyDays = getData(
-"study_days",
-[]
-);
+    const today =
+        new Date()
+        .toISOString()
+        .split("T")[0];
 
-const today = getTodayKey();
+    if(
+        !studyDays.includes(today)
+    ) {
 
-if (!studyDays.includes(today)) {
+        studyDays.push(today);
 
-studyDays.push(today);
+        saveData();
 
-saveData(
-"study_days",
-studyDays
-);
-
-}
-
-updateStreak();
+    }
 
 }
 
 
-/* =========================================================
-   CALCULAR SEQUÊNCIA
-========================================================= */
+function calculateStreak() {
 
-function updateStreak() {
+    if(studyDays.length === 0) {
 
-const studyDays = getData(
-"study_days",
-[]
-);
+        return 0;
 
-if (studyDays.length === 0) {
+    }
 
-document.getElementById(
-"streakValue"
-).textContent = "0";
+    const dates =
+        studyDays
+        .map(
+            d => new Date(d)
+        )
+        .sort(
+            (a,b) => b-a
+        );
 
-return;
+    let streak = 1;
 
-}
+    for(
+        let i = 0;
+        i < dates.length - 1;
+        i++
+    ) {
 
-let streak = 0;
+        const difference =
+            Math.round(
+                (
+                    dates[i]
+                    -
+                    dates[i+1]
+                )
+                /
+                (1000*60*60*24)
+            );
 
-let date = new Date();
+        if(
+            difference === 1
+        ) {
 
-while (true) {
+            streak++;
 
-const key =
-date.getFullYear() +
-"-" +
-String(date.getMonth() + 1).padStart(2, "0") +
-"-" +
-String(date.getDate()).padStart(2, "0");
+        } else {
 
-if (studyDays.includes(key)) {
+            break;
 
-streak++;
+        }
 
-date.setDate(
-date.getDate() - 1
-);
+    }
 
-} else {
-
-break;
-
-}
-
-}
-
-document.getElementById(
-"streakValue"
-).textContent = streak;
+    return streak;
 
 }
 
 
-/* =========================================================
-   PROGRESSO DE UMA SEMANA
-========================================================= */
+/* =========================
+   GENERAL PROGRESS
+========================= */
 
-function getWeekProgress(weekId) {
+function calculateGeneralProgress() {
 
-let completed = 0;
+    let total = 0;
 
-let total = 0;
+    let done = 0;
 
-subjects.forEach(subject => {
+    Object.keys(subjects)
+    .forEach(subject => {
 
-for (
-let task = 0;
-task < 3;
-task++
+        for(
+            let week = 1;
+            week <= 7;
+            week++
+        ) {
+
+            for(
+                let task = 0;
+                task < 3;
+                task++
+            ) {
+
+                total++;
+
+                if(
+                    isComplete(
+                        week,
+                        subject,
+                        task
+                    )
+                ) {
+
+                    done++;
+
+                }
+
+            }
+
+        }
+
+    });
+
+    return {
+
+        total,
+        done,
+        percent:
+            Math.round(
+                done / total * 100
+            )
+
+    };
+
+}
+
+
+/* =========================
+   SUBJECT PROGRESS
+========================= */
+
+function calculateSubjectProgress(
+    subject
 ) {
 
-total++;
+    let done = 0;
 
-const key =
-`${weekId}_${subject.id}_${task}`;
+    let total = 21;
 
-if (
-getData(
-key,
-false
-)
+    for(
+        let week = 1;
+        week <= 7;
+        week++
+    ) {
+
+        for(
+            let task = 0;
+            task < 3;
+            task++
+        ) {
+
+            if(
+                isComplete(
+                    week,
+                    subject,
+                    task
+                )
+            ) {
+
+                done++;
+
+            }
+
+        }
+
+    }
+
+    return Math.round(
+        done / total * 100
+    );
+
+}
+
+
+/* =========================
+   WEEK PROGRESS
+========================= */
+
+function weekProgress(
+    week
 ) {
 
-completed++;
+    let done = 0;
+
+    for(
+        const subject
+        of Object.keys(subjects)
+    ) {
+
+        for(
+            let task = 0;
+            task < 3;
+            task++
+        ) {
+
+            if(
+                isComplete(
+                    week,
+                    subject,
+                    task
+                )
+            ) {
+
+                done++;
+
+            }
+
+        }
+
+    }
+
+    return {
+
+        done,
+
+        percent:
+            Math.round(
+                done / 9 * 100
+            )
+
+    };
 
 }
 
+
+/* =========================
+   WEEK BUTTONS
+========================= */
+
+function renderWeekButtons() {
+
+    const container =
+        document
+        .getElementById(
+            "weekButtons"
+        );
+
+    container.innerHTML = "";
+
+    for(
+        let week = 1;
+        week <= 7;
+        week++
+    ) {
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+        const data =
+            weekProgress(week);
+
+        button.className =
+            "week-button";
+
+        if(
+            week === selectedWeek
+        ) {
+
+            button.classList.add(
+                "active"
+            );
+
+        }
+
+        if(
+            data.percent === 100
+        ) {
+
+            button.classList.add(
+                "completed"
+            );
+
+        }
+
+        button.innerHTML = `
+            S${week}
+            <br>
+            <small>
+            ${data.percent}% concluído
+            </small>
+        `;
+
+        button.onclick = () => {
+
+            selectedWeek =
+                week;
+
+            renderAll();
+
+        };
+
+        container.appendChild(
+            button
+        );
+
+    }
+
 }
 
-});
 
-return {
-completed,
-total,
-percent:
-Math.round(
-(completed / total) * 100
-)
-};
+/* =========================
+   NOTES
+========================= */
 
-}
-
-
-/* =========================================================
-   PROGRESSO DE UMA DISCIPLINA
-========================================================= */
-
-function getSubjectProgress(subjectId) {
-
-let completed = 0;
-
-const total = weeks.length * 3;
-
-weeks.forEach(week => {
-
-for (
-let task = 0;
-task < 3;
-task++
+function noteKey(
+    week,
+    subject
 ) {
 
-const key =
-`${week.id}_${subjectId}_${task}`;
+    return `week-${week}-${subject}`;
 
-if (
-getData(
-key,
-false
-)
+}
+
+
+function getNote(
+    week,
+    subject
 ) {
 
-completed++;
-
-}
-
-}
-
-});
-
-return {
-
-completed,
-total,
-percent:
-Math.round(
-(completed / total) * 100
-)
-
-};
+    return notes[
+        noteKey(
+            week,
+            subject
+        )
+    ] || "";
 
 }
 
 
-/* =========================================================
-   PROGRESSO GERAL
-========================================================= */
-
-function getGeneralProgress() {
-
-let completed = 0;
-
-let total =
-weeks.length *
-subjects.length *
-3;
-
-weeks.forEach(week => {
-
-subjects.forEach(subject => {
-
-for (
-let task = 0;
-task < 3;
-task++
+function saveNote(
+    week,
+    subject,
+    value
 ) {
 
-const key =
-`${week.id}_${subject.id}_${task}`;
+    notes[
+        noteKey(
+            week,
+            subject
+        )
+    ] = value;
 
-if (
-getData(
-key,
-false
-)
+    localStorage.setItem(
+        "minhaFaculdadeNotes",
+        JSON.stringify(notes)
+    );
+
+    const saved =
+        document.getElementById(
+            `saved-${week}-${subject}`
+        );
+
+    if(saved) {
+
+        saved.textContent =
+            "💾 Salvo automaticamente";
+
+    }
+
+}
+
+
+/* =========================
+   VOICE
+========================= */
+
+const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+
+let recognition = null;
+
+let activeVoiceButton = null;
+
+let activeVoiceStatus = null;
+
+
+function startVoice(
+    week,
+    subject
 ) {
 
-completed++;
+    if(!SpeechRecognition) {
+
+        alert(
+            "Seu navegador não oferece suporte à digitação por voz. Tente abrir o aplicativo pelo Chrome ou Edge."
+        );
+
+        return;
+
+    }
+
+    const textarea =
+        document.getElementById(
+            `note-${week}-${subject}`
+        );
+
+    const button =
+        document.getElementById(
+            `voice-${week}-${subject}`
+        );
+
+    const status =
+        document.getElementById(
+            `voice-status-${week}-${subject}`
+        );
+
+
+    recognition =
+        new SpeechRecognition();
+
+
+    recognition.lang =
+        "pt-BR";
+
+
+    recognition.continuous =
+        true;
+
+
+    recognition.interimResults =
+        true;
+
+
+    activeVoiceButton =
+        button;
+
+    activeVoiceStatus =
+        status;
+
+
+    button.classList.add(
+        "recording"
+    );
+
+    button.textContent =
+        "⏹️ Parar de ouvir";
+
+
+    status.textContent =
+        "🔴 Ouvindo...";
+
+
+    recognition.onresult =
+        function(event) {
+
+            let finalText =
+                "";
+
+            let interimText =
+                "";
+
+
+            for(
+                let i =
+                    event.resultIndex;
+
+                i <
+                    event.results.length;
+
+                i++
+            ) {
+
+                const transcript =
+                    event
+                    .results[i][0]
+                    .transcript;
+
+
+                if(
+                    event
+                    .results[i]
+                    .isFinal
+                ) {
+
+                    finalText +=
+                        transcript + " ";
+
+                } else {
+
+                    interimText +=
+                        transcript;
+
+                }
+
+            }
+
+
+            if(finalText) {
+
+                const current =
+                    textarea.value
+                    .trim();
+
+
+                textarea.value =
+                    current
+                    ?
+                    current +
+                    " " +
+                    finalText.trim()
+                    :
+                    finalText.trim();
+
+
+                saveNote(
+                    week,
+                    subject,
+                    textarea.value
+                );
+
+            }
+
+
+            if(interimText) {
+
+                status.textContent =
+                    "🔴 " +
+                    interimText;
+
+            } else {
+
+                status.textContent =
+                    "🔴 Ouvindo...";
+
+            }
+
+        };
+
+
+    recognition.onerror =
+        function(event) {
+
+            console.log(
+                "Erro no reconhecimento:",
+                event.error
+            );
+
+            status.textContent =
+                "⚠️ Não consegui entender. Tente novamente.";
+
+        };
+
+
+    recognition.onend =
+        function() {
+
+            button.classList.remove(
+                "recording"
+            );
+
+            button.textContent =
+                "🎙️ Falar";
+
+            status.textContent =
+                "Pronto para ouvir";
+
+            recognition =
+                null;
+
+        };
+
+
+    recognition.start();
 
 }
 
-}
 
-});
+function stopVoice() {
 
-});
+    if(recognition) {
 
-return {
+        recognition.stop();
 
-completed,
-total,
-percent:
-Math.round(
-(completed / total) * 100
-)
+        recognition = null;
 
-};
+    }
 
 }
 
 
-/* =========================================================
-   SEMANAS CONCLUÍDAS
-========================================================= */
-
-function isWeekCompleted(weekId) {
-
-return getData(
-"week_completed_" + weekId,
-false
-);
-
-}
-
-
-function toggleWeekComplete() {
-
-const current =
-isWeekCompleted(
-selectedWeek
-);
-
-saveData(
-"week_completed_" + selectedWeek,
-!current
-);
-
-registerStudyDay();
-
-renderWeeks();
-
-renderDetails();
-
-updateDashboard();
-
-}
-
-
-/* =========================================================
-   CHECKBOX
-========================================================= */
-
-function toggleTask(
-weekId,
-subjectId,
-task
+function toggleVoice(
+    week,
+    subject
 ) {
 
-const key =
-`${weekId}_${subjectId}_${task}`;
+    if(recognition) {
 
-const current =
-getData(
-key,
-false
-);
+        stopVoice();
 
-saveData(
-key,
-!current
-);
+        return;
 
-registerStudyDay();
+    }
 
-renderWeeks();
-
-renderDetails();
-
-updateDashboard();
+    startVoice(
+        week,
+        subject
+    );
 
 }
 
 
-/* =========================================================
-   RENDERIZAR SEMANAS
-========================================================= */
+/* =========================
+   WEEK DETAILS
+========================= */
 
-function renderWeeks() {
+function renderWeekDetails() {
 
-const container =
-document.getElementById(
-"weeksContainer"
-);
+    const container =
+        document
+        .getElementById(
+            "weekDetails"
+        );
 
-container.innerHTML = "";
 
-weeks.forEach(week => {
+    let html = `
 
-const progress =
-getWeekProgress(
-week.id
-);
+        <h2>
+            📚 Semana ${selectedWeek}
+        </h2>
 
-const completed =
-isWeekCompleted(
-week.id
-);
+        <p>
+            Complete as atividades e registre
+            suas anotações.
+        </p>
 
-const card =
-document.createElement(
-"div"
-);
+    `;
 
-card.className =
-"week-card" +
-(
-week.id === selectedWeek
-? " selected"
-: ""
-) +
-(
-completed
-? " completed"
-: ""
-);
 
-card.onclick = () => {
+    Object.entries(subjects)
+    .forEach(
+        ([id, subject]) => {
 
-selectedWeek =
-week.id;
+            const topic =
+                subject.topics[
+                    selectedWeek - 1
+                ];
 
-renderWeeks();
 
-renderDetails();
+            html += `
 
-};
+            <div
+                class="subject-section">
 
-card.innerHTML = `
+                <h3>
+                    ${subject.icon}
+                    ${subject.name}
+                </h3>
 
-<div class="week-title">
+                <p class="topic">
+                    ${topic}
+                </p>
 
-${completed ? "✅" : "📚"}
+                <label class="check">
 
-${week.id}
+                    <input
+                        type="checkbox"
+                        ${
+                            isComplete(
+                                selectedWeek,
+                                id,
+                                0
+                            )
+                            ?
+                            "checked"
+                            :
+                            ""
+                        }
 
-</div>
+                        onchange="
+                            setComplete(
+                                ${selectedWeek},
+                                '${id}',
+                                0,
+                                this.checked
+                            )
+                        "
+                    >
 
-<div class="week-date">
+                    🎥 Ver aula / material
 
-Avaliação: ${week.date}
+                </label>
 
-</div>
 
-<div class="week-percent">
+                <label class="check">
 
-${progress.percent}% concluído
+                    <input
+                        type="checkbox"
+                        ${
+                            isComplete(
+                                selectedWeek,
+                                id,
+                                1
+                            )
+                            ?
+                            "checked"
+                            :
+                            ""
+                        }
 
-</div>
+                        onchange="
+                            setComplete(
+                                ${selectedWeek},
+                                '${id}',
+                                1,
+                                this.checked
+                            )
+                        "
+                    >
 
-<div class="mini-bar">
+                    📝 Fazer anotações / resumo
 
-<div
-class="mini-fill"
-style="width:${progress.percent}%">
-</div>
+                </label>
 
-</div>
 
-`;
+                <label class="check">
 
-container.appendChild(
-card
-);
+                    <input
+                        type="checkbox"
+                        ${
+                            isComplete(
+                                selectedWeek,
+                                id,
+                                2
+                            )
+                            ?
+                            "checked"
+                            :
+                            ""
+                        }
 
-});
+                        onchange="
+                            setComplete(
+                                ${selectedWeek},
+                                '${id}',
+                                2,
+                                this.checked
+                            )
+                        "
+                    >
+
+                    🧠 Revisar antes da avaliação
+
+                </label>
+
+
+                <!-- ANOTAÇÕES -->
+
+                <div
+                    class="notes-area">
+
+                    <div
+                        class="notes-header">
+
+                        <strong>
+                            📝 Minhas anotações
+                        </strong>
+
+                        <button
+                            class="clear-button"
+                            onclick="
+                                clearNote(
+                                    ${selectedWeek},
+                                    '${id}'
+                                )
+                            "
+                        >
+                            🗑️ Limpar
+                        </button>
+
+                    </div>
+
+
+                    <textarea
+                        id="note-${selectedWeek}-${id}"
+                        placeholder="Escreva suas anotações aqui... ou use o botão 🎙️ para falar."
+                        oninput="
+                            saveNote(
+                                ${selectedWeek},
+                                '${id}',
+                                this.value
+                            )
+                        "
+                    >${escapeHTML(
+                        getNote(
+                            selectedWeek,
+                            id
+                        )
+                    )}</textarea>
+
+
+                    <div
+                        class="voice-area">
+
+                        <button
+                            id="voice-${selectedWeek}-${id}"
+                            class="voice-button"
+
+                            onclick="
+                                toggleVoice(
+                                    ${selectedWeek},
+                                    '${id}'
+                                )
+                            "
+                        >
+
+                            🎙️ Falar
+
+                        </button>
+
+
+                        <span
+                            id="voice-status-${selectedWeek}-${id}"
+                            class="voice-status">
+
+                            Pronto para ouvir
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="saved-${selectedWeek}-${id}"
+                        class="saved">
+
+                        💾 Salvo automaticamente
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            `;
+
+        }
+    );
+
+
+    const week =
+        weekProgress(
+            selectedWeek
+        );
+
+
+    html += `
+
+        <div
+            style="
+                margin-top:25px;
+                padding-top:20px;
+                border-top:1px solid #eee;
+            "
+        >
+
+            <strong>
+                Progresso da semana:
+                ${week.done}/9 atividades
+            </strong>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    style="
+                        width:${week.percent}%
+                    "
+                ></div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    container.innerHTML =
+        html;
 
 }
 
 
-/* =========================================================
-   RENDERIZAR DETALHES
-========================================================= */
+/* =========================
+   CLEAR NOTE
+========================= */
 
-function renderDetails() {
-
-const week =
-weeks.find(
-w => w.id === selectedWeek
-);
-
-document.getElementById(
-"detailsTitle"
-).textContent =
-`📖 ${week.id} — Conteúdos da semana`;
-
-
-const button =
-document.getElementById(
-"completeWeekBtn"
-);
-
-if (
-isWeekCompleted(
-selectedWeek
-)
+function clearNote(
+    week,
+    subject
 ) {
 
-button.textContent =
-"↩️ Desmarcar semana concluída";
+    if(
+        !confirm(
+            "Apagar todas as anotações desta matéria nesta semana?"
+        )
+    ) {
 
-} else {
+        return;
 
-button.textContent =
-"✅ Marcar semana como concluída";
-
-}
-
-
-const container =
-document.getElementById(
-"detailsContainer"
-);
-
-container.innerHTML = "";
+    }
 
 
-subjects.forEach(
-subject => {
-
-const detail =
-document.createElement(
-"div"
-);
-
-detail.className =
-"subject-detail";
+    delete notes[
+        noteKey(
+            week,
+            subject
+        )
+    ];
 
 
-let html = `
-
-<h3>
-📚 ${subject.name}
-</h3>
-
-<p>
-<strong>
-${subject.topics[
-parseInt(
-selectedWeek.substring(1)
-) - 1
-]}
-</strong>
-</p>
-
-`;
+    localStorage.setItem(
+        "minhaFaculdadeNotes",
+        JSON.stringify(notes)
+    );
 
 
-const tasks = [
-
-"🎥 Ver aula / material",
-
-"📝 Fazer anotações / resumo",
-
-"🧠 Revisar antes da avaliação"
-
-];
-
-
-tasks.forEach(
-(task, index) => {
-
-const key =
-`${selectedWeek}_${subject.id}_${index}`;
-
-const checked =
-getData(
-key,
-false
-);
-
-html += `
-
-<label class="checkbox-row">
-
-<input
-type="checkbox"
-${checked ? "checked" : ""}
-onchange="
-toggleTask(
-'${selectedWeek}',
-'${subject.id}',
-${index}
-)
-">
-
-<span>
-${task}
-</span>
-
-</label>
-
-`;
-
-});
-
-
-html += `
-
-`;
-
-detail.innerHTML =
-html;
-
-container.appendChild(
-detail
-);
-
-});
+    renderWeekDetails();
 
 }
 
 
-/* =========================================================
-   PROGRESSO DAS MATÉRIAS
-========================================================= */
+/* =========================
+   ESCAPE HTML
+========================= */
 
-function renderSubjectProgress() {
-
-const container =
-document.getElementById(
-"subjectProgress"
-);
-
-container.innerHTML = "";
-
-
-subjects.forEach(
-subject => {
-
-const progress =
-getSubjectProgress(
-subject.id
-);
-
-const card =
-document.createElement(
-"div"
-);
-
-card.className =
-"subject-card";
-
-
-card.innerHTML = `
-
-<h3>
-📚 ${subject.short}
-</h3>
-
-<p>
-${subject.name}
-</p>
-
-<div class="subject-percent">
-
-${progress.percent}%
-
-</div>
-
-<div class="progress-bar">
-
-<div
-class="progress-fill"
-style="width:${progress.percent}%">
-</div>
-
-</div>
-
-<small>
-
-${progress.completed}/${progress.total}
-tarefas concluídas
-
-</small>
-
-`;
-
-container.appendChild(
-card
-);
-
-});
-
-}
-
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-function updateDashboard() {
-
-const general =
-getGeneralProgress();
-
-
-document.getElementById(
-"generalPercent"
-).textContent =
-general.percent + "%";
-
-
-document.getElementById(
-"generalProgress"
-).style.width =
-general.percent + "%";
-
-
-renderSubjectProgress();
-
-
-let completedWeeks = 0;
-
-weeks.forEach(
-week => {
-
-if (
-isWeekCompleted(
-week.id
-)
+function escapeHTML(
+    text
 ) {
 
-completedWeeks++;
+    return text
 
-}
+        .replace(
+            /&/g,
+            "&amp;"
+        )
 
-});
+        .replace(
+            /</g,
+            "&lt;"
+        )
 
+        .replace(
+            />/g,
+            "&gt;"
+        )
 
-document.getElementById(
-"completedWeeks"
-).textContent =
-`${completedWeeks}/${weeks.length}`;
+        .replace(
+            /"/g,
+            "&quot;"
+        )
 
-
-updateStreak();
-
-}
-
-
-/* =========================================================
-   SAUDAÇÃO
-========================================================= */
-
-function updateGreeting() {
-
-const hour =
-new Date().getHours();
-
-let greeting;
-
-if (hour < 12) {
-
-greeting =
-"Bom dia";
-
-} else if (hour < 18) {
-
-greeting =
-"Boa tarde";
-
-} else {
-
-greeting =
-"Boa noite";
-
-}
-
-document.getElementById(
-"greeting"
-).textContent =
-`${greeting}, Sarah! 💜`;
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
 
 
-/* =========================================================
-   DATA
-========================================================= */
-
-function renderTodayDate() {
-
-const today =
-new Date();
-
-const formatted =
-today.toLocaleDateString(
-"pt-BR",
-{
-weekday: "long",
-day: "numeric",
-month: "long",
-year: "numeric"
-}
-);
-
-document.getElementById(
-"todayDate"
-).textContent =
-formatted;
-
-}
-
-
-/* =========================================================
-   PRÓXIMA AVALIAÇÃO
-========================================================= */
-
-function getNextExam() {
-
-const today =
-new Date();
-
-const upcoming =
-exams
-.map(exam => {
-
-const [
-day,
-month,
-year
-] =
-exam.date.split("/");
-
-return {
-
-...exam,
-
-dateObject:
-new Date(
-year,
-month - 1,
-day
-)
-
-};
-
-})
-.filter(
-exam =>
-exam.dateObject >= today
-)
-.sort(
-(a,b) =>
-a.dateObject -
-b.dateObject
-);
-
-return upcoming[0];
-
-}
-
-
-function renderNextExam() {
-
-const exam =
-getNextExam();
-
-if (!exam) {
-
-document.getElementById(
-"nextExamHero"
-).textContent =
-"Todas as avaliações concluídas! 🎉";
-
-return;
-
-}
-
-document.getElementById(
-"nextExamHero"
-).textContent =
-`${exam.id} — ${exam.date}`;
-
-}
-
-
-/* =========================================================
-   SEMANA ATUAL
-========================================================= */
+/* =========================
+   CURRENT WEEK
+========================= */
 
 function renderCurrentWeek() {
 
-const today =
-new Date();
+    const today =
+        new Date();
 
-let current =
-weeks[0];
-
-weeks.forEach(
-week => {
-
-const [
-day,
-month,
-year
-] =
-week.date.split("/");
-
-const examDate =
-new Date(
-year,
-month - 1,
-day
-);
-
-if (
-today <= examDate
-) {
-
-current =
-week;
-
-}
-
-});
+    let current =
+        7;
 
 
-document.getElementById(
-"currentWeekHero"
-).textContent =
-`📖 ${current.id} em foco`;
+    for(
+        const exam
+        of exams
+    ) {
 
-const subjectNames =
-subjects
-.map(
-s => s.short
-)
-.join(" • ");
+        const parts =
+            exam.date.split("/");
 
-document.getElementById(
-"currentWeekDescription"
-).textContent =
-`${subjectNames} — próxima avaliação em ${current.date}`;
+
+        const date =
+            new Date(
+                Number(parts[2]),
+                Number(parts[1])-1,
+                Number(parts[0])
+            );
+
+
+        if(
+            date >= today
+        ) {
+
+            current =
+                exam.week;
+
+            break;
+
+        }
+
+    }
+
+
+    document
+        .getElementById(
+            "currentWeekText"
+        )
+        .textContent =
+        `Estamos trabalhando na Semana ${current}. Próxima avaliação: S${current} em ${exams[current-1].date}.`;
 
 }
 
 
-/* =========================================================
-   AVALIAÇÕES
-========================================================= */
+/* =========================
+   GENERAL UI
+========================= */
+
+function renderGeneralProgress() {
+
+    const data =
+        calculateGeneralProgress();
+
+
+    document
+        .getElementById(
+            "generalProgress"
+        )
+        .style.width =
+        data.percent + "%";
+
+
+    document
+        .getElementById(
+            "generalProgressText"
+        )
+        .textContent =
+        `${data.percent}% concluído — ${data.done} de ${data.total} atividades`;
+
+}
+
+
+function renderSubjects() {
+
+    const map = {
+
+        eja:
+        "eja",
+
+        lit:
+        "lit",
+
+        art:
+        "art"
+
+    };
+
+
+    Object.keys(map)
+    .forEach(
+        subject => {
+
+            const percent =
+                calculateSubjectProgress(
+                    subject
+                );
+
+
+            document
+                .getElementById(
+                    `progress-${subject}`
+                )
+                .style.width =
+                percent + "%";
+
+
+            document
+                .getElementById(
+                    `text-${subject}`
+                )
+                .textContent =
+                percent + "%";
+
+        }
+    );
+
+}
+
+
+function renderStreak() {
+
+    const streak =
+        calculateStreak();
+
+
+    document
+        .getElementById(
+            "streak"
+        )
+        .textContent =
+        streak === 1
+        ?
+        "🔥 1 dia"
+        :
+        `🔥 ${streak} dias`;
+
+}
+
+
+/* =========================
+   EXAMS
+========================= */
 
 function renderExams() {
 
-const container =
-document.getElementById(
-"examContainer"
-);
-
-container.innerHTML = "";
-
-
-exams.forEach(
-exam => {
-
-const div =
-document.createElement(
-"div"
-);
-
-div.className =
-"exam";
-
-div.innerHTML = `
-
-<div>
-
-<strong>
-📝 ${exam.id}
-</strong>
-
-<span>
-Avaliação da semana ${exam.id}
-</span>
-
-</div>
-
-<div class="exam-date">
-
-${exam.date}
-
-</div>
-
-`;
-
-container.appendChild(
-div
-);
-
-});
-
-}
+    const container =
+        document
+        .getElementById(
+            "exams"
+        );
 
 
-/* =========================================================
-   LINHA DO TEMPO
-========================================================= */
-
-function renderTimeline() {
-
-const container =
-document.getElementById(
-"timelineContainer"
-);
-
-container.innerHTML = "";
+    container.innerHTML = "";
 
 
-weeks.forEach(
-week => {
+    exams.forEach(
+        exam => {
 
-const div =
-document.createElement(
-"div"
-);
+            const div =
+                document.createElement(
+                    "div"
+                );
 
-div.className =
-"timeline-item";
 
-div.innerHTML = `
+            div.className =
+                "exam";
 
-<strong>
-${week.id}
-</strong>
 
-<span>
-Avaliação: ${week.date}
-</span>
+            div.innerHTML = `
 
-`;
+                <div>
 
-container.appendChild(
-div
-);
+                    <strong>
+                        S${exam.week}
+                    </strong>
 
-});
+                    <br>
+
+                    Avaliação
+
+                </div>
+
+
+                <div
+                    class="exam-date">
+
+                    ${exam.date}
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                div
+            );
+
+        }
+    );
 
 }
 
 
-/* =========================================================
+/* =========================
    TIMER
-========================================================= */
+========================= */
+
+let timerSeconds =
+    60 * 60;
+
+let timerInterval =
+    null;
+
 
 function updateTimer() {
 
-const minutes =
-Math.floor(
-timerSeconds / 60
-);
+    const minutes =
+        Math.floor(
+            timerSeconds / 60
+        );
 
-const seconds =
-timerSeconds % 60;
+    const seconds =
+        timerSeconds % 60;
 
 
-document.getElementById(
-"timerDisplay"
-).textContent =
-`${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+    document
+        .getElementById(
+            "timerDisplay"
+        )
+        .textContent =
+        `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
 
 }
 
 
 function startTimer() {
 
-if (timerInterval)
-return;
+    if(timerInterval) {
 
-registerStudyDay();
+        return;
 
-timerInterval =
-setInterval(
-() => {
+    }
 
-if (timerSeconds > 0) {
 
-timerSeconds--;
+    timerInterval =
+        setInterval(
+            () => {
 
-updateTimer();
+                if(
+                    timerSeconds <= 0
+                ) {
 
-} else {
+                    clearInterval(
+                        timerInterval
+                    );
 
-clearInterval(
-timerInterval
-);
+                    timerInterval =
+                        null;
 
-timerInterval = null;
+                    alert(
+                        "🎉 Tempo de estudo concluído!"
+                    );
 
-alert(
-"⏰ Tempo encerrado! Hora de respirar um pouquinho. 💜"
-);
+                    return;
 
-}
+                }
 
-},
-1000
-);
+
+                timerSeconds--;
+
+                updateTimer();
+
+            },
+
+            1000
+
+        );
 
 }
 
 
 function pauseTimer() {
 
-clearInterval(
-timerInterval
-);
+    clearInterval(
+        timerInterval
+    );
 
-timerInterval = null;
+    timerInterval =
+        null;
 
 }
 
 
 function resetTimer() {
 
-pauseTimer();
+    pauseTimer();
 
-timerSeconds =
-60 * 60;
+    timerSeconds =
+        60 * 60;
 
-updateTimer();
+    updateTimer();
 
 }
 
 
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
+/* =========================
+   RENDER ALL
+========================= */
 
-updateGreeting();
+function renderAll() {
 
-renderTodayDate();
+    renderGeneralProgress();
 
-renderCurrentWeek();
+    renderSubjects();
 
-renderNextExam();
+    renderWeekButtons();
 
-renderWeeks();
+    renderWeekDetails();
 
-renderDetails();
+    renderStreak();
 
-renderExams();
+    renderExams();
 
-renderTimeline();
+    renderCurrentWeek();
 
-updateDashboard();
+    updateTimer();
 
-updateTimer();
+}
 
 
-/* =========================================================
+/* =========================
+   START
+========================= */
+
+setGreeting();
+
+renderAll();
+
+
+/* =========================
    SERVICE WORKER
-========================================================= */
+========================= */
 
-if (
-"serviceWorker"
-in navigator
+if(
+    "serviceWorker"
+    in navigator
 ) {
 
-window.addEventListener(
-"load",
-() => {
+    window.addEventListener(
+        "load",
+        () => {
 
-navigator.serviceWorker
-.register("./sw.js")
+            navigator
+                .serviceWorker
+                .register("./sw.js")
 
-.then(
-() =>
-console.log(
-"Aplicativo pronto!"
-)
-)
+                .then(
+                    () =>
+                    console.log(
+                        "Aplicativo pronto!"
+                    )
+                )
 
-.catch(
-error =>
-console.error(
-"Erro:",
-error
-)
-);
+                .catch(
+                    error =>
+                    console.error(
+                        "Erro:",
+                        error
+                    )
+                );
 
-});
+        }
+    );
 
 }
 
 </script>
 
 </body>
+
 </html>
